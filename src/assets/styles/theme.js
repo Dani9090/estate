@@ -1,39 +1,60 @@
-
+// eslint-disable-next-line prettier/prettier
 export const theme = {
-    primary: 'hsl(49, 100%, 50%)',
-    honey: 'hsl(41, 90%, 62%)',
-    price: 'hsl(41, 85%, 55%)',
-    grey: 'hsl(0, 2.9%, 93.1%)',
-    darkgrey: 'hsl(0, 2.9%, 70.1%)',
-    black: 'hsl(0, 100%, 0%)',
-    white: 'hsl(0, 0%, 100%)',
-    font: {
-        size:{
-            xxs: '1.3rem',
-            xs: '1.6rem',
-            s: '1.9rem',
-            xxm: '2.1rem',
-            xm: '2.3rem',
-            m: '2.6rem',
-            mx: '3.0rem',
-            l: '3.4rem',
-            xl: '3.8rem',
-            xxl: '5.0rem',
-            xxxl: '7.0rem',
-        },
-        family:{
-            Lobster: '"Lobster", sans-serif',
-            Open: '"Open+Sans", sans-serif',
-            Aktiv: '"Franklin Gothic Medium", sans-serif',
-            Montserrat: '"Montserrat", sans-serif',
-        }
+  orange: "hsl(39, 96%, 65%)",
+  darkOrange: "hsl(14, 64%, 54%)",
+  black: "hsl(0, 4%, 15%)",
+  blackDark: "hsl(0, 0%, 0%)",
+  white: "hsl(70, 6%, 79%)",
+  primary: "hsl(49, 100%, 50%)",
+  honey: "hsl(41, 90%, 62%)",
+  price: "hsl(41, 85%, 55%)",
+  grey: "hsl(0, 2.9%, 93.1%)",
+  darkgrey: "hsl(0, 2.9%, 70.1%)",
+  lightBlack: "hsl(0, 100%, 0%)",
+  whiteMax: "hsl(0, 0%, 100%)",
+  color: {
+    beige: "hsl(33,23%,83%)",
+    steel: "hsl(225,23%,83%)",
+    orange: "hsl(14,64%,54%)",
+    black: "hsl(210,11%,30%)",
+    brown: "hsl(355,13%,20%)",
+  },
+  font: {
+    size: {
+      xxs: "1.3rem",
+      xs: "1.6rem",
+      s: "1.8rem",
+      xxm: "2.1rem",
+      xm: "2.3rem",
+      m: "2.6rem",
+      mx: "3.0rem",
+      l: "3.4rem",
+      xl: "3.8rem",
+      xxl: "5.0rem",
+      xxxl: "7.0rem",
+      heading: "5rem",
+      headingMobile: "5.3rem",
+      headingSmall: "4.2rem",
+      paragraph: "1.6rem",
+      caption: "1.35rem",
     },
-    media:{
-        reset: '@media (min-width: 1px)',
-        phone: '@media (min-width: 350px)',
-        tablet: '@media (min-width: 750px)',
-        desktop: '@media (min-width: 1024px)',
-        large: '@media (min-width: 1545px)'
-
-    }
+    family: {
+      montserrat: '"Montserrat", sans-serif',
+      cormorant: '"Cormorant Garamond", serif',
+      gilda: '"Gilda Display", serif;',
+    },
+  },
+  media: {
+    reset: "@media (min-width: 1px)",
+    phone: "@media (min-width: 350px)",
+    tablet: "@media (min-width: 750px)",
+    desktop: "@media (min-width: 1024px)",
+    large: "@media (min-width: 1545px)",
+  },
+  mq: {
+    tablet: "@media (min-width: 768px)",
+    desktop: "@media (min-width: 1024px)",
+    bigDesktop: "@media (min-width: 1280px)",
+    huge: "@media(min-width: 1440px)",
+  },
 }

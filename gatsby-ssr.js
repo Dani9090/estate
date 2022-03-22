@@ -1,9 +1,6 @@
-
 import React from 'react';
-import Layout from './src/templates/MainTemplate';
-
+import MainTemplate  from './src/templates/MainTemplate';
 
 export function wrapPageElement({ element, props }) {
-    return <Layout {...props}>{element}</Layout>;
+    return <MainTemplate {...props}>{element}</MainTemplate>;
 }
-

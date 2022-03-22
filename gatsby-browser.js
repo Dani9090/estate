@@ -1,9 +1,6 @@
+const React = require("react")
+const { MainTemplate } = require("./src/components/MainTemplate")
 
-import React from 'react';
-import Layout from './src/templates/MainTemplate';
-
-
-export function wrapPageElement({ element, props }) {
-    return <Layout {...props}>{element}</Layout>;
-}
-
+exports.wrapPageElement = ({ element, props }) => (
+  <MainTemplate {...props}>{element}</MainTemplate>
+)
