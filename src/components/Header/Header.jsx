@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const StyledHero = styled.div`
   width: 100%;
@@ -32,13 +31,15 @@ const StyleIMG = styled.div`
   }
 `
 
-const IMG = styled(GatsbyImage)`
+const IMG = styled.img`
   width: 100%;
   height: 250px;
 
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
-    height: 700px;
+    height: 750px;
+    object-fit: cover;
+    object-position: 50% 10%;
   }
 `
 const StyledP = styled.p`
@@ -62,13 +63,11 @@ const Header = () => {
     query {
       datoCmsHeader {
         header {
-          gatsbyImageData(width: 1910)
+          url
         }
       }
     }
   `)
-
-  const image = getImage(data.datoCmsHeader.header)
 
   return (
     <StyledHero>
@@ -76,7 +75,7 @@ const Header = () => {
         <Nav />
       </StyledNav2> */}
       <StyleIMG>
-        <IMG image={image} alt="logo" />
+        <IMG src={data.datoCmsHeader.header.url} />
         <StyledP>
           Jesteśmy specjalistami, posiadającymi wieloletnie doświadczenie, w
           pomocy właścicielom nieruchomości którzy napotkali problemy związane
