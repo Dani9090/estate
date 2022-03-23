@@ -30,6 +30,9 @@
     "import/no-unresolved": "off",
     "react/jsx-props-no-spreading": "off",
     "linebreak-style": 0,
+    "react/button-has-type": "off",
+    "import/no-mutable-exports" : "off",
+    "no-var": 0,
     "max-len": [
       "error",
       {

@@ -7,6 +7,10 @@ const H1 = styled.h1`
 `
 
 const Procedure = () => {
-  return <H1>Procedure</H1>
+  return (
+    <div>
+      <H1>Procedure</H1>
+    </div>
+  )
 }
 export default Procedure

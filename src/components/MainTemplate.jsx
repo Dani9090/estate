@@ -6,7 +6,7 @@ import { theme } from "assets/styles/theme"
 import Nav from "components/Nav/Nav"
 import Footer from "./Footer/Footer"
 
-export function MainTemplate({ children }) {
+export var MainTemplate = ({ children }) => {
   return (
     <>
       <GlobalStyle />

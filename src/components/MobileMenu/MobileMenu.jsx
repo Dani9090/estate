@@ -66,7 +66,7 @@ const Links = styled(Link)`
   color: ${({ theme }) => theme.black};
 `
 
-function MobileMenu({ isOpen }) {
+const MobileMenu = ({ isOpen }) => {
   const [isOffertOpen, setOffertOpen] = useState(false)
 
   const toogleOffertFree = () => {

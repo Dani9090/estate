@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <main>
       <title>Not found</title>

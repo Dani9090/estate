@@ -27,19 +27,19 @@ const StyledP = styled.p`
   margin-top: 10px;
   margin-bottom: 0;
   font-size: ${({ theme }) => theme.font.size.xxs};
-  font-family: ${({ theme }) => theme.font.family.Montserrat};
+  font-family: ${({ theme }) => theme.font.family.montserrat};
   font-weight: 600;
 
   ${({ theme }) => theme.media.desktop} {
     text-align: center;
     margin-top: 10px;
     font-size: ${({ theme }) => theme.font.size.xxs};
-    font-family: ${({ theme }) => theme.font.family.Montserrat};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 600;
   }
 `
 
-function Footer() {
+const Footer = () => {
   return (
     <StyleFooter>
       <p>logo</p>
