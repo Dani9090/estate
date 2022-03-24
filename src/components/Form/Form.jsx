@@ -1,4 +1,6 @@
 import React from "react"
+import chroma from "chroma-js"
+import Select from "react-select"
 import { useForm } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
 import styled from "styled-components"
@@ -19,7 +21,7 @@ const StyledForm = styled.div`
 `
 const StyledPerson = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 `
 
@@ -29,6 +31,7 @@ const StyledInner = styled.form`
   align-items: center;
   position: relative;
   z-index: 1;
+  color: ${({ theme }) => theme.white};
 
   input {
     width: 550px;
@@ -37,6 +40,8 @@ const StyledInner = styled.form`
     border-radius: 5px;
     z-index: 1;
     background-color: ${({ theme }) => theme.brown};
+    color: ${({ theme }) => theme.white};
+    padding-left: 5px;
     &::placeholder {
       padding: 5px;
     }
@@ -70,15 +75,70 @@ const P = styled.p`
   width: auto;
   padding: 0 10px;
 `
+const StyledController = styled.div`
+  background-color: ${({ theme }) => theme.black};
+  border: 1px ${({ theme }) => theme.black} solid;
+
+  .css-1jwi8f4-singleValue {
+    color: ${({ theme }) => theme.white};
+  }
+`
 
 export default function Form() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm({
+    defaultValues: {
+      firstName: "",
+      select: {},
+    },
+  })
   const onSubmit = data => console.log(data)
 
+  const options = [
+    { value: "mieszkanie", label: "Mieszkanie" },
+    { value: "dom", label: "Dom" },
+    { value: "dziłaka", label: "Działka" },
+    { value: "inne", label: "Inne" },
+  ]
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+
+      background: state.isSelected ? "hsl(14, 64%, 54%)" : "hsl(355,13%,20%)",
+      color: state.isSelected ? "white" : "black",
+      padding: 5,
+      width: "545px",
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      width: 550,
+      height: 60,
+      border: "1px solid hsl(39, 96%, 65%)",
+      borderRadius: "5px",
+      background: "hsl(355,13%,20%)",
+      display: "flex",
+      color: "red",
+    }),
+    menu: () => ({
+      width: 550,
+      border: "1px solid hsl(39, 96%, 65%)",
+      borderRadius: "5px",
+      background: "hsl(355,13%,20%)",
+    }),
+
+    Input: () => ({
+      color: "red",
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 1 : 1
+      const transition = "opacity 300ms"
+
+      return { ...provided, opacity, transition }
+    },
+  }
   return (
     <StyledWrapper>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
@@ -122,16 +182,66 @@ export default function Form() {
             />
           </StyledInner>
 
+          <StyledController>
+            <Select
+              label="Age"
+              options={options}
+              styles={customStyles}
+              width="200px"
+            />
+          </StyledController>
+
+          <StyledInner>
+            <ErrorMessage errors={errors} name="First name" />
+            <p>Oczekiwana Cena </p>
+            <input
+              type="text"
+              placeholder="Oczekiwana Cena"
+              {...register("First name", {
+                required: "Oczekiwana Cena",
+                maxLength: 80,
+              })}
+            />
+          </StyledInner>
+
           <StyledInner>
             <ErrorMessage errors={errors} name="Mobile number" />
-            <p>Imie </p>
+            <p>Telefon kontaktowy</p>
             <input
               type="tel"
-              placeholder="Numer telefonu"
+              placeholder="Telefon kontaktowy"
               {...register("Mobile number", {
                 required: "Podaj numer telefonu",
                 minLength: 6,
                 maxLength: 12,
+              })}
+            />
+          </StyledInner>
+
+          <StyledInner>
+            <ErrorMessage
+              errors={errors}
+              name="inne informacje dotyczące nieruchomości"
+            />
+            <p>inne informacje dotyczące nieruchomości </p>
+            <input
+              type="text"
+              placeholder="inne informacje dotyczące nieruchomości "
+              {...register("inne informacje dotyczące nieruchomości", {
+                required: "inne informacje dotyczące nieruchomości ",
+                maxLength: 80,
+              })}
+            />
+          </StyledInner>
+          <StyledInner>
+            <ErrorMessage errors={errors} name="Adres" />
+            <p>Adres</p>
+            <input
+              type="text"
+              placeholder="Adres"
+              {...register("Adres", {
+                required: "Adres",
+                maxLength: 80,
               })}
             />
           </StyledInner>

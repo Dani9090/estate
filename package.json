@@ -17,6 +17,7 @@
     "@hookform/error-message": "^2.0.0",
     "assets": "^3.0.1",
     "babel-plugin-styled-components": "^2.0.6",
+    "chroma-js": "^2.4.2",
     "components": "^0.1.0",
     "gatsby": "^4.8.0",
     "gatsby-plugin-eslint": "^4.0.2",
@@ -39,6 +40,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.28.1",
+    "react-select": "^5.2.2",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
