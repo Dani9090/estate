@@ -2,20 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80412e83-7590-4c85-8246-d784f0aabc6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/normalize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/GlobalStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/GlobalStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/About/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainTemplate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MobileMenu/MobileMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileMenu/MobileMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />

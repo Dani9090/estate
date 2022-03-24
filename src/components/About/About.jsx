@@ -5,8 +5,13 @@ import { useStaticQuery, graphql } from "gatsby"
 const StyledWrapper = styled.div`
   width: 100%;
   height: auto;
+  border: 1px solid {( {
+    theme
+  })= > theme . black
+  };
   background-color: ${({ theme }) => theme.black};
   position: relative;
+
   p {
     height: 50px;
     width: 80%;
@@ -16,6 +21,7 @@ const StyledWrapper = styled.div`
     text-align: center;
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-size: ${({ theme }) => theme.font.size.xxs};
+
     &::after {
       position: absolute;
       content: "";
@@ -27,6 +33,7 @@ const StyledWrapper = styled.div`
       bottom: 30px;
     }
   }
+
   &::after {
     position: absolute;
     content: "";

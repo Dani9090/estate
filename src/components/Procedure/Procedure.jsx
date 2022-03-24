@@ -5,9 +5,10 @@ import styled from "styled-components"
 const StyledWrapper = styled.div`
   width: 100%;
   height: auto;
-  margin-top: -20px;
+  border: 1px ${({ theme }) => theme.orange} solid;
   background-color: ${({ theme }) => theme.orange};
   position: relative;
+
   p {
     height: 50px;
     width: 80%;
@@ -18,9 +19,11 @@ const StyledWrapper = styled.div`
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-size: ${({ theme }) => theme.font.size.xxs};
     font-weight: 600;
+
     .without {
       font-weight: 400;
     }
+
     &::after {
       position: absolute;
       content: "";
@@ -32,7 +35,8 @@ const StyledWrapper = styled.div`
       top: 30px;
     }
   }
-  &::after {
+
+  &:: after {
     position: absolute;
     content: "";
     width: 100px;

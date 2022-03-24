@@ -4,6 +4,7 @@ export const theme = {
   darkOrange: "hsl(14, 64%, 54%)",
   black: "hsl(0, 4%, 15%)",
   blackDark: "hsl(0, 0%, 0%)",
+  brown: "hsl(355,13%,20%)",
   white: "hsl(70, 6%, 79%)",
   primary: "hsl(49, 100%, 50%)",
   honey: "hsl(41, 90%, 62%)",

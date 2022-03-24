@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components"
 import { GlobalStyle } from "assets/styles/GlobalStyle"
 import { theme } from "assets/styles/theme"
 import Nav from "components/Nav/Nav"
+import "src/assets/styles/normalize.css"
 import Footer from "./Footer/Footer"
 
 export var MainTemplate = ({ children }) => {
