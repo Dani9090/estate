@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
 import styled from "styled-components"
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.form`
   width: 100%;
-  height: 500px;
+  height: auto;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.black};
   border: 1px ${({ theme }) => theme.black} solid;
@@ -42,6 +42,7 @@ const StyledInner = styled.form`
     background-color: ${({ theme }) => theme.brown};
     color: ${({ theme }) => theme.white};
     padding-left: 5px;
+
     &::placeholder {
       padding: 5px;
     }
@@ -62,7 +63,12 @@ const StyledInner = styled.form`
       ${({ theme }) => theme.brown} 50%,
       ${({ theme }) => theme.black} 0%
     );
+    z-index: 9;
+  }
+
+  .error {
     z-index: 999;
+    color: red;
   }
 `
 const StyledRadio = styled.form`
@@ -140,11 +146,15 @@ export default function Form() {
     },
   }
   return (
-    <StyledWrapper>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+    <StyledWrapper onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm>
         <StyledPerson>
           <StyledInner>
-            <ErrorMessage errors={errors} name="First name" />
+            <ErrorMessage
+              errors={errors}
+              name="First name"
+              render={({ message }) => <p className="error">{message}</p>}
+            />
             <p>Imie </p>
             <input
               type="text"
@@ -157,7 +167,11 @@ export default function Form() {
           </StyledInner>
 
           <StyledInner>
-            <ErrorMessage errors={errors} name="Email" />
+            <ErrorMessage
+              errors={errors}
+              name="Email"
+              render={({ message }) => <p className="error">{message}</p>}
+            />
             <p>E-mail </p>
             <input
               type="text"
@@ -170,13 +184,17 @@ export default function Form() {
           </StyledInner>
 
           <StyledInner>
+            <ErrorMessage
+              errors={errors}
+              name="Book"
+              render={({ message }) => <p className="error">{message}</p>}
+            />
             <p>Nr księgi wieczystej </p>
-            <ErrorMessage errors={errors} name="Nr księgi wieczystej " />
             <input
               type="text"
               placeholder="Nr księgi wieczystej "
-              {...register("Nr księgi wieczystej ", {
-                required: "Podaj nazwisko",
+              {...register("Book", {
+                required: "Podaj numer księgi",
                 maxLength: 100,
               })}
             />
@@ -192,12 +210,16 @@ export default function Form() {
           </StyledController>
 
           <StyledInner>
-            <ErrorMessage errors={errors} name="First name" />
-            <p>Oczekiwana Cena </p>
+            <ErrorMessage
+              errors={errors}
+              name="Price"
+              render={({ message }) => <p className="error">{message}</p>}
+            />
+            <p className="see">Oczekiwana Cena </p>
             <input
               type="text"
               placeholder="Oczekiwana Cena"
-              {...register("First name", {
+              {...register("Price", {
                 required: "Oczekiwana Cena",
                 maxLength: 80,
               })}
@@ -205,7 +227,11 @@ export default function Form() {
           </StyledInner>
 
           <StyledInner>
-            <ErrorMessage errors={errors} name="Mobile number" />
+            <ErrorMessage
+              errors={errors}
+              name="Mobile number"
+              render={({ message }) => <p className="error">{message}</p>}
+            />
             <p>Telefon kontaktowy</p>
             <input
               type="tel"
@@ -221,14 +247,16 @@ export default function Form() {
           <StyledInner>
             <ErrorMessage
               errors={errors}
-              name="inne informacje dotyczące nieruchomości"
+              name="Info"
+              render={({ message }) => <p className="error">{message}</p>}
             />
+
             <p>inne informacje dotyczące nieruchomości </p>
             <input
               type="text"
-              placeholder="inne informacje dotyczące nieruchomości "
-              {...register("inne informacje dotyczące nieruchomości", {
-                required: "inne informacje dotyczące nieruchomości ",
+              placeholder="inne informacje dotyczące nieruchomości"
+              {...register("Info", {
+                required: "Podaj informację dotyczące nieruchomości",
                 maxLength: 80,
               })}
             />

@@ -114,14 +114,14 @@ const Back = styled.div`
   background-color: black;
   position: absolute;
   left: 50%;
-  top: 40px;
+  top: 57px;
   z-index: 1;
 `
 
 const Procedure = () => {
   const data = useStaticQuery(graphql`
     query {
-      allDatoCmsProcedure {
+      allDatoCmsProcedure(sort: { fields: number }) {
         nodes {
           id
           description
