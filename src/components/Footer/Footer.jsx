@@ -1,51 +1,85 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
+import {
+  StyledFooter,
+  StyledWrapper,
+  StyledP,
+  Links,
+  Phone,
+} from "./FooterStyled"
 
-const StyleFooter = styled.footer`
-  width: 100vw;
-  height: 200px;
-  position: relative;
-  border: 1px red solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  ${({ theme }) => theme.media.desktop} {
-    width: 100%;
-    height: 185px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
+const TopSide = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 `
 
-const StyledP = styled.p`
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: ${({ theme }) => theme.font.size.xxs};
-  font-family: ${({ theme }) => theme.font.family.montserrat};
-  font-weight: 600;
+const StyledNavFooter = styled.ul`
+  width: 100%;
+  font-family: ${({ theme }) => theme.font.family.inter};
+  margin: 0 0 0 5%;
 
-  ${({ theme }) => theme.media.desktop} {
-    text-align: center;
-    margin-top: 10px;
-    font-size: ${({ theme }) => theme.font.size.xxs};
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    font-weight: 600;
-  }
+  height: 150px;
+  padding: 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  list-style: none;
 `
 
 const Footer = () => {
   return (
-    <StyleFooter>
-      <p>logo</p>
+    <StyledFooter>
+      <StyledWrapper>
+        <TopSide>
+          <Links noborder to="/">
+            <Phone>
+              <p>Zadzwoń </p>
 
-      <StyledP>© 2021 All rights reserved</StyledP>
-    </StyleFooter>
+              <p>510 668 433</p>
+            </Phone>
+          </Links>
+
+          <StyledNavFooter>
+            <li>
+              <Links activeClassName="active" to="/#onas">
+                O nas
+              </Links>
+            </li>
+            <li>
+              <Links activeClassName="active" to="/procedura/">
+                Procedura
+              </Links>
+            </li>
+            <li>
+              <Links activeClassName="active" to="/nieruchomosci/">
+                Nieruchomości
+              </Links>
+            </li>
+            <li>
+              <Links activeClassName="active" to="/sklep/">
+                Kontakt
+              </Links>
+            </li>
+            <li>
+              <Links activeClassName="active" to="/sklep/">
+                Obsługiwane Miasta
+              </Links>
+            </li>
+          </StyledNavFooter>
+        </TopSide>
+        <StyledP>
+          Wyrażam zgodę na przetwarzanie moich danych osobowych przez xxx w
+          zakresie niezbędnym do oferowania produktów i usług, w tym podmiotów
+          współpracujących z xxx Przyjmuję do wiadomości, że moje dane osobowe
+          zostaną wprowadzone do bazy danych i będą przetwarzane przez xxx. dla
+          celów statystycznych. Oświadczam również, iż moja zgoda jest
+          dobrowolna a także, że zostałem poinformowany, iż mam prawo wglądu do
+          swoich danych, ich poprawienia lub usunięcia. Administratorami danych
+          osobowych jest xxx z siedzibą w xxx (00-000) przy ul. xxx
+        </StyledP>
+      </StyledWrapper>
+    </StyledFooter>
   )
 }
 

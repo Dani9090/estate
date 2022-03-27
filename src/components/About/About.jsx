@@ -5,12 +5,10 @@ import { useStaticQuery, graphql } from "gatsby"
 const StyledWrapper = styled.div`
   width: 100%;
   height: auto;
-  border: 1px solid {( {
-    theme
-  })= > theme . black
-  };
+  border: 1px solid ${({ theme }) => theme.black};
   background-color: ${({ theme }) => theme.black};
   position: relative;
+  margin-top: 50px;
 
   p {
     height: 50px;
@@ -42,7 +40,7 @@ const StyledWrapper = styled.div`
     clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
     background-color: ${({ theme }) => theme.darkOrange};
     right: 30px;
-    top: 30px;
+    top: 50px;
   }
 `
 const StyledInner = styled.div`
@@ -112,7 +110,7 @@ const About = () => {
   `)
 
   return (
-    <StyledWrapper>
+    <StyledWrapper id="onas">
       <StyledTitle>
         Zajmujemy się zakupem nieruchomości wszelkiego rodzaju w tym:
       </StyledTitle>

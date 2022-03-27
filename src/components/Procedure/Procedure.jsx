@@ -36,7 +36,7 @@ const StyledWrapper = styled.div`
     }
   }
 
-  &:: after {
+  &::after {
     position: absolute;
     content: "";
     width: 100px;
@@ -53,7 +53,7 @@ const StyledInner = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
-  padding-bottom: 70px;
+  padding: 20px 0 70px 0;
 
   div {
     display: flex;
@@ -75,8 +75,8 @@ const StyledTitle = styled.h2`
 `
 const StyledImage = styled.div`
   position: relative;
-  width: 270px;
-  height: 270px;
+  width: 260px;
+  height: 260px;
   border-radius: 100%;
   background-color: white;
 `

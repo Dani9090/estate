@@ -87,6 +87,7 @@ module.exports = {
           'montserrat\:300,500,700',
           'cormorant garamond\:500',
           'gilda display\:400',
+          'inter\:300,500,700',
         ],
         display: "swap",
       },

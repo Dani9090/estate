@@ -47,26 +47,9 @@ const StyledHeader = styled.header`
       css`
         position: relative;
         height: 110px;
-        margin-bottom: 30px;
-
-        ::before,
-        ::after {
-          content: "";
-          position: absolute;
-          display: flex;
-          width: 100%;
-          height: 5px;
-          left: 0;
-        }
-
-        ::before {
-          top: 0;
-        }
-
-        ::after {
-          top: 125px;
-          z-index: -1;
-        }
+        top: 0;
+        border: 1px solid ${({ theme }) => theme.black};
+        background-color: ${({ theme }) => theme.black};
       `}
   }
 `
@@ -177,6 +160,8 @@ const Phone = styled.div`
     display: flex;
     flex-direction: column;
 
+    
+
     p {
       margin: 0 auto;
       height: 25px;
@@ -191,6 +176,18 @@ const Phone = styled.div`
         color: ${({ theme }) => theme.honey};
       }
     }
+
+    ${({ notmain }) =>
+      notmain &&
+      css`
+        padding: 0;
+
+        &:last-child {
+          margin-top: 0;
+          color: red !important;
+        }
+      `}
+  }
   }
 `
 
@@ -198,14 +195,8 @@ const Nav = () => {
   const location = useLocation()
   const manpage = location.pathname.length > 1
   const [isMenuOpen] = useState(false)
-  /* const [order] = useContext(orderContext);
-       const OrderLength = order.length<1 ? null : order.length; */
-  /*  const toogleMobileMenu = () => {
-      setMenuState(!isMenuOpen);
-    }; */
-  // eslint-disable-next-line no-undef
-  // const url = typeof window !== `undefined` ? window.location.href : null;
-  // const ismainpage = (url !== null &&url.length > 22? 1 : 0);
+  console.log(manpage)
+
   return (
     <StyledHeader notmain={manpage}>
       <StyledInner>

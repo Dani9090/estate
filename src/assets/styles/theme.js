@@ -31,7 +31,7 @@ export const theme = {
       mx: "3.0rem",
       l: "3.4rem",
       xl: "3.8rem",
-      xxl: "5.0rem",
+      xxl: "4.9rem",
       xxxl: "7.0rem",
       heading: "5rem",
       headingMobile: "5.3rem",
@@ -42,7 +42,8 @@ export const theme = {
     family: {
       montserrat: '"Montserrat", sans-serif',
       cormorant: '"Cormorant Garamond", serif',
-      gilda: '"Gilda Display", serif;',
+      gilda: '"Gilda Display", serif',
+      inter: '"Inter", sans-serif',
     },
   },
   media: {
