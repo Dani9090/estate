@@ -42,29 +42,19 @@ const Footer = () => {
 
           <StyledNavFooter>
             <li>
-              <Links activeClassName="active" to="/#onas">
-                O nas
-              </Links>
+              <Links to="/#onas">O nas</Links>
             </li>
             <li>
-              <Links activeClassName="active" to="/procedura/">
-                Procedura
-              </Links>
+              <Links to="/procedura/">Procedura</Links>
             </li>
             <li>
-              <Links activeClassName="active" to="/nieruchomosci/">
-                Nieruchomości
-              </Links>
+              <Links to="/nieruchomosci/">Nieruchomości</Links>
             </li>
             <li>
-              <Links activeClassName="active" to="/sklep/">
-                Kontakt
-              </Links>
+              <Links to="/sklep/">Kontakt</Links>
             </li>
             <li>
-              <Links activeClassName="active" to="/sklep/">
-                Obsługiwane Miasta
-              </Links>
+              <Links to="/sklep/">Obsługiwane Miasta</Links>
             </li>
           </StyledNavFooter>
         </TopSide>

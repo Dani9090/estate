@@ -48,6 +48,18 @@ export const StyledInner = styled.form`
   z-index: 1;
   color: ${({ theme }) => theme.white};
 
+  textarea {
+    width: 450px;
+    height: 120px;
+    border: 1px solid ${({ theme }) => theme.orange};
+    border-radius: 5px;
+    z-index: 1;
+    background-color: ${({ theme }) => theme.brown};
+    color: ${({ theme }) => theme.white};
+    padding-left: 5px;
+    padding-top: 15px;
+  }
+
   input {
     min-width: 450px;
     height: 60px;

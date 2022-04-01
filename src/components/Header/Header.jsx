@@ -62,6 +62,7 @@ const Header = () => {
   const data = useStaticQuery(graphql`
     query {
       datoCmsHeader {
+        description
         header {
           url
         }
@@ -76,12 +77,7 @@ const Header = () => {
       </StyledNav2> */}
       <StyleIMG>
         <IMG src={data.datoCmsHeader.header.url} />
-        <StyledP>
-          Jesteśmy specjalistami, posiadającymi wieloletnie doświadczenie, w
-          pomocy właścicielom nieruchomości którzy napotkali problemy związane
-          ze swoją nieruchomością, w tym problemy z lokatorami czy też
-          najemcami.{" "}
-        </StyledP>
+        <StyledP>{data.datoCmsHeader.description}</StyledP>
       </StyleIMG>
     </StyledHero>
   )

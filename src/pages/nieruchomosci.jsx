@@ -1,7 +1,8 @@
 import React from "react"
+import Estate from "src/components/Estate/Estate"
 
-const Estate = () => {
-  return <main />
+const EstatePage = () => {
+  return <Estate />
 }
 
-export default Estate
+export default EstatePage

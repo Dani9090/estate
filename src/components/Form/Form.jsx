@@ -76,8 +76,8 @@ const Back = styled.div`
   background-color: ${({ theme }) => theme.orange};
   position: absolute;
   left: -48px;
-  top: 0px;
-  border-radius: 5px;
+  top: 0;
+  border-radius: 2px;
   z-index: 1;
 `
 const H1 = styled.p`
@@ -304,10 +304,11 @@ export default function Form() {
                 name="Info"
                 render={({ message }) => <p className="error">{message}</p>}
               />
-
               <p>inne informacje dotyczące nieruchomości </p>
-              <input
-                type="text"
+              <textarea
+                cols="100"
+                rows="3"
+                name="text"
                 placeholder="Inne informacje dotyczące nieruchomości"
                 {...register("Info", {
                   required: "Podaj informację dotyczące nieruchomości",
@@ -319,47 +320,15 @@ export default function Form() {
           <StyledSection>
             <StyledRadioWrapper>
               <StyledRadio>
-                <ErrorMessage
-                  errors={errors}
-                  name="balcony"
-                  render={({ message }) => <p className="error">{message}</p>}
-                />
-
-                <input
-                  {...register("balcony", { required: "Wybierz rodzaj" })}
-                  type="radio"
-                  value="Yes"
-                />
+                <input {...register("balcony")} type="radio" value="Yes" />
                 <P>Balkon</P>
               </StyledRadio>
-
               <StyledRadio>
-                <ErrorMessage
-                  errors={errors}
-                  name="lift"
-                  render={({ message }) => <p className="error">{message}</p>}
-                />
-
-                <input
-                  {...register("lift", { required: "Wybierz rodzaj" })}
-                  type="radio"
-                  value="Yes"
-                />
+                <input {...register("lift")} type="radio" value="Yes" />
                 <P>Winda</P>
               </StyledRadio>
-
               <StyledRadio>
-                <ErrorMessage
-                  errors={errors}
-                  name="parking"
-                  render={({ message }) => <p className="error">{message}</p>}
-                />
-
-                <input
-                  {...register("parking", { required: "Wybierz rodzaj" })}
-                  type="radio"
-                  value="Yes"
-                />
+                <input {...register("parking")} type="radio" value="Yes" />
                 <P>Miejsce parkingowe</P>
               </StyledRadio>
             </StyledRadioWrapper>

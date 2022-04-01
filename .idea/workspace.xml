@@ -2,50 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80412e83-7590-4c85-8246-d784f0aabc6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/custom.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/FooterStyled.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/nieruchomosci.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Estate/Estate.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/CreatePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/CreatePages.Styles.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/custom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/custom.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/styles/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/theme.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/About/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/About/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/FooterStyled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/FooterStyled.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/icons/Instagram.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/icons/facebook.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/icons/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/icons/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/IconFb.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/IconLoc.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/IconMaiil.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/IconTel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/Logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/Logop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/images/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/styles/GlobalStyle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/styles/GlobalStyles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/assets/styles/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/Footer/Footer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/Header/Header.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/MainTemplate.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/MobileMenu/MobileMenu.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/Nav/Nav.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/SEO/SEO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/components/atoms/optionsList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/images/gatsby-astronaut.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/images/gatsby-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/pages/404.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/pages/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/pages/page-2.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src2/templates/MainTemplate.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nieruchomosci.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nieruchomosci.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/MainTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/MainTemplate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/jetbrains-polish-dictionary-master/pl_PL.dic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Estate" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -82,10 +61,15 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Daniel\projects\estate\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="1" Folder0="C:\Users\Daniel\Desktop\jetbrains-polish-dictionary-master" CustomDictionaries="1" CustomDictionary0="C:\Users\Daniel\Desktop\jetbrains-polish-dictionary-master\pl_PL.dic" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dsiwik\projects\Estate\src\components\Estate" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="80412e83-7590-4c85-8246-d784f0aabc6b" name="Changes" comment="" />
@@ -99,9 +83,11 @@
       <workItem from="1648038192673" duration="1839000" />
       <workItem from="1648067346670" duration="5107000" />
       <workItem from="1648193140861" duration="1175000" />
-      <workItem from="1648201848824" duration="7579000" />
-      <workItem from="1648326313360" duration="3155000" />
-      <workItem from="1648368129270" duration="8458000" />
+      <workItem from="1648201848824" duration="8273000" />
+      <workItem from="1648453678399" duration="10996000" />
+      <workItem from="1648538195418" duration="6328000" />
+      <workItem from="1648551970918" duration="4863000" />
+      <workItem from="1648622400216" duration="31736000" />
     </task>
     <servers />
   </component>

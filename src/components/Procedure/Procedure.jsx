@@ -48,10 +48,10 @@ const StyledWrapper = styled.div`
   }
 `
 const StyledInner = styled.div`
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-content: center;
   padding: 20px 0 70px 0;
 
@@ -81,8 +81,9 @@ const StyledImage = styled.div`
   background-color: white;
 `
 const IMG = styled.img`
-  width: auto;
-  margin: 0 auto;
+  width: 150px;
+  max-height: 200px;
+  height: auto;
 
   ${({ theme }) => theme.media.desktop} {
     width: 150px;
@@ -113,6 +114,7 @@ const Back = styled.div`
   height: 70px;
   background-color: black;
   position: absolute;
+  border-radius: 2px;
   left: 50%;
   top: 57px;
   z-index: 1;

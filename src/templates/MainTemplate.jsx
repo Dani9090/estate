@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 import Footer from "components/Footer/Footer"
 import Nav from "components/Nav/Nav"
 
-function MainTemplate({ children }) {
+const MainTemplate = ({ children }) => {
   return (
     <>
       <GlobalStyle />

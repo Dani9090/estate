@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -22,6 +23,7 @@ const StyledTitleWrapper = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+
   &::after {
     position: absolute;
     content: "";
@@ -52,7 +54,7 @@ const Back = styled.div`
   position: absolute;
   right: 0;
   top: 0;
-  border-radius: 5px;
+  border-radius: 2px;
   z-index: 1;
 `
 const H1 = styled.p`
@@ -89,6 +91,7 @@ const StyledRightSide = styled.div`
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 500;
+
     &:first-child {
       padding-top: 0;
     }
@@ -106,11 +109,12 @@ const StyledH5 = styled.p`
 const StyledUL = styled.div`
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.montserrat};
   font-weight: 500;
   text-align: center;
+
   li {
     width: auto;
     list-style-position: inside;
@@ -124,6 +128,7 @@ const Bottom = styled.div`
   width: 100%;
   height: 100px;
   position: relative;
+
   &::after {
     position: absolute;
     content: "";
@@ -136,6 +141,25 @@ const Bottom = styled.div`
   }
 `
 const SupportedCity = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allDatoCmsSupportedcity {
+        nodes {
+          id
+          description2
+          descritption
+          title
+          map {
+            url
+          }
+          listcity {
+            id
+            city
+          }
+        }
+      }
+    }
+  `)
   return (
     <StyledWrapper>
       <StyledTitleWrapper>
@@ -144,56 +168,27 @@ const SupportedCity = () => {
           <H1>Obsługiwane Miasta</H1>
         </StyledTitle>
       </StyledTitleWrapper>
-      <StyledInner>
-        <StyledLeftSide>
-          <IMG
-            src="https://www.datocms-assets.com/64942/1648311517-mapa.jpg"
-            alt="map"
-          />
-        </StyledLeftSide>
-        <StyledRightSide>
-          <p>
-            Skupujemy mieszkania z terenu Warszawy tzn. Bemowo, Białołęka,
-            Bielany, Mokotów, Ochota, Praga Południe, Praga Północ, Rembertów,
-            Śródmieście, Targówek, Ursus, Ursynów, Wawer, Wesoła, Wilanów,
-            Włochy, Wola, Żoliborz.
-          </p>
-          <p>
-            Ponadto interesują nas nieruchomości czy udziały w lokalach w
-            województwie mazowieckim; łódzkim, lubelskim, podlaskim, śląskim.
-          </p>
-          <StyledH5>Lista miast</StyledH5>
-          <StyledUL>
-            <ul>
-              <li>Białystok</li>
-              <li>Bielsko-biała</li>
-              <li>Bydgoszcz</li>
-              <li>Częstochowa</li>
-              <li>Gdańsk</li>
-              <li>Gdańsk</li>
-              <li>Katowice</li>
-            </ul>
-            <ul>
-              <li>Białystok</li>
-              <li>Bielsko-biała</li>
-              <li>Bydgoszcz</li>
-              <li>Częstochowa</li>
-              <li>Gdańsk</li>
-              <li>Gdańsk</li>
-              <li>Katowice</li>
-            </ul>
-            <ul>
-              <li>Białystok</li>
-              <li>Bielsko-biała</li>
-              <li>Bydgoszcz</li>
-              <li>Częstochowa</li>
-              <li>Gdańsk</li>
-              <li>Gdańsk</li>
-              <li>Katowice</li>
-            </ul>
-          </StyledUL>
-        </StyledRightSide>
-      </StyledInner>
+      {data.allDatoCmsSupportedcity.nodes.map(support => (
+        <StyledInner key={support.id}>
+          <StyledLeftSide>
+            <IMG src={support.map.url} alt="map" />
+          </StyledLeftSide>
+          <StyledRightSide>
+            <p>{support.descritption}</p>
+            <p>{support.description2}</p>
+            <StyledH5>{support.title}</StyledH5>
+
+            <StyledUL>
+              {support.listcity.map(list => (
+                <ul
+                  key={list.id}
+                  dangerouslySetInnerHTML={{ __html: list.city }}
+                />
+              ))}
+            </StyledUL>
+          </StyledRightSide>
+        </StyledInner>
+      ))}
       <Bottom />
     </StyledWrapper>
   )

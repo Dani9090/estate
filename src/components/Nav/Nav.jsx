@@ -1,5 +1,3 @@
-// eslint-disable-next-line prettier/prettier
-// eslint-disable-next-line import/no-default-export
 import React, { useState } from "react"
 import { useLocation } from "@reach/router"
 import styled, { css } from "styled-components"
@@ -46,7 +44,7 @@ const StyledHeader = styled.header`
       notmain &&
       css`
         position: relative;
-        height: 110px;
+        height: 100px;
         top: 0;
         border: 1px solid ${({ theme }) => theme.black};
         background-color: ${({ theme }) => theme.black};
@@ -82,7 +80,7 @@ const StyledNav = styled.nav`
 `
 
 const StyledMenuList = styled.ul`
-  width: 100%;
+  width: ${({ notmain }) => (notmain ? "90%" : "100%")};
   height: auto;
   display: flex;
   list-style-type: none;
@@ -136,13 +134,15 @@ const Links = styled(Link)`
   }
 
   ${({ theme }) => theme.media.desktop} {
-    font-size: ${({ theme }) => theme.font.size.s};
+    font-size: ${({ notmain, theme }) =>
+      notmain ? theme.font.size.xs : theme.font.size.s};
 
     &.active {
+      width: auto;
       border-bottom: 3px solid ${({ theme }) => theme.primary};
       border-left: none;
-      font-size: ${({ theme }) => theme.font.size.xxm};
-      margin: 0 10px;
+      font-size: ${({ theme }) => theme.font.size.s};
+      padding: 0 10px;
     }
   }
 `
@@ -164,29 +164,21 @@ const Phone = styled.div`
 
     p {
       margin: 0 auto;
-      height: 25px;
+      height: ${({ notmain }) => (notmain ? "auto" : "25px")};
       font-weight: 400;
       max-width: 200px;
-      font-size: ${({ theme }) => theme.font.size.xm};
+      font-size: ${({ notmain, theme }) =>
+        notmain ? theme.font.size.s : theme.font.size.xm};
       letter-spacing: 0.2em;
 
       &:last-child {
-        margin-top: 5px;
-        font-size: ${({ theme }) => theme.font.size.m};
+        margin-top: ${({ notmain }) => (notmain ? "0" : "5px")};
+        font-size: ${({ notmain, theme }) =>
+          notmain ? theme.font.size.s : theme.font.size.m};
         color: ${({ theme }) => theme.honey};
       }
     }
 
-    ${({ notmain }) =>
-      notmain &&
-      css`
-        padding: 0;
-
-        &:last-child {
-          margin-top: 0;
-          color: red !important;
-        }
-      `}
   }
   }
 `
@@ -211,30 +203,38 @@ const Nav = () => {
         {/*    <Hamburger onClick={toogleMobileMenu} isOpen={isMenuOpen}/> */}
         <MobileMenu isOpen={isMenuOpen} />
 
-        <StyledNav>
-          <StyledMenuList>
+        <StyledNav notmain={manpage}>
+          <StyledMenuList notmain={manpage}>
             <Li>
-              <Links activeClassName="active" to="/#onas">
+              <Links notmain={manpage} activeClassName="active" to="/#onas">
                 O nas
               </Links>
             </Li>
             <Li>
-              <Links activeClassName="active" to="/procedura/">
+              <Links
+                notmain={manpage}
+                activeClassName="active"
+                to="/procedura/"
+              >
                 Procedura
               </Links>
             </Li>
             <Li>
-              <Links activeClassName="active" to="/nieruchomosci/">
+              <Links
+                notmain={manpage}
+                activeClassName="active"
+                to="/nieruchomosci/"
+              >
                 Nieruchomości
               </Links>
             </Li>
             <Li>
-              <Links activeClassName="active" to="/sklep/">
+              <Links notmain={manpage} activeClassName="active" to="/sklep/">
                 Kontakt
               </Links>
             </Li>
             <Li>
-              <Links activeClassName="active" to="/sklep/">
+              <Links notmain={manpage} activeClassName="active" to="/sklep/">
                 Obsługiwane Miasta
               </Links>
             </Li>
