@@ -2,34 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80412e83-7590-4c85-8246-d784f0aabc6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/functions/SendMail/SendMail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ContactForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Estate.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Daniel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/FOrmik2.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify.toml" beforeDir="false" afterPath="$PROJECT_DIR$/netlify.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Estate/Estate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Estate/Estate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/FOrmik.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/FOrmik.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainTemplate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/CreatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/CreatePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/MainTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/MainTemplate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,25 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Estate" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettier.import.notification.dismissed" value="true" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Daniel\projects\estate\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel\projects\estate\src\components\Form" />
       <recent name="C:\Users\dsiwik\projects\Estate\src\components\Estate" />
     </key>
   </component>
@@ -105,6 +76,9 @@
       <workItem from="1648622400216" duration="32424000" />
       <workItem from="1649052110631" duration="53372000" />
       <workItem from="1649399888822" duration="21206000" />
+      <workItem from="1649672660635" duration="6972000" />
+      <workItem from="1649694557544" duration="6014000" />
+      <workItem from="1649701106023" duration="5168000" />
     </task>
     <servers />
   </component>

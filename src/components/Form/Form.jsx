@@ -173,7 +173,7 @@ async function onSubmit (data){
                 placeholder="Telefon kontaktowy"
                 {...register("MobileNumber", {
                   required: "Podaj numer telefonu",
-                  minLength: 6,
+                  minLength: 9,
                   maxLength: 12,
                 })}
               />

@@ -182,11 +182,13 @@ export const StyledController = styled.div`
       ${({ theme }) => theme.black} 0%
     );
     z-index: 9;
+    
   }
-
-  .css-1jwi8f4-singleValue {
-    color: ${({ theme }) => theme.white};
+  .error {
+    z-index: 999;
+    color: red;
   }
+  
 `
 export const Select=styled.select`
 width: auto;
@@ -242,7 +244,7 @@ export const StyledButton = styled.div`
   align-items: center;
   flex-direction: column;
 
-  input {
+  button {
     width: 300px;
     height: 40px;
     border: 1px solid ${({ theme }) => theme.orange};
