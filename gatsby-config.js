@@ -16,38 +16,15 @@ const gatsbyRequiredRules = path.join(
 
 module.exports = {
   siteMetadata: {
-    title: "Z lokatorem",
-    siteUrl: "https://www.zlokatorem.pl",
+    title: `Z lokatorem`,
+    siteUrl: `https://www.zlokatorem.pl`,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-eslint",
-      options: {
-        fix: true,
-        rulePaths: [gatsbyRequiredRules],
-        stages: ["develop"],
-        extensions: ["js", "jsx"],
-        exclude: [
-          "node_modules",
-          "bower_components",
-          ".cache",
-          "public",
-          "src2",
-          "gatsby-config.js",
-        ],
-      },
-    },
-
     "gatsby-plugin-styled-components",
-    /* {
-                   resolve: 'gatsby-plugin-google-analytics',
-                   options: {
-                     trackingId: 'gvkavrag7nip',
-                   },
-                 }, */
+    `gatsby-plugin-eslint`,
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+
     {
       resolve: "gatsby-plugin-manifest",
       options: {

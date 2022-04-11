@@ -1,4 +1,4 @@
-// eslint-disable-next-line prettier/prettier
+
 export const theme = {
   orange: "hsl(39, 96%, 65%)",
   darkOrange: "hsl(14, 64%, 54%)",

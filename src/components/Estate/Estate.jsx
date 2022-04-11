@@ -171,7 +171,7 @@ const Estate = () => {
       {HowMany > 0 ? (
         <StyledInner>
           {data.allDatoCmsEstate.nodes.map(estate => (
-            <Link to={estate.slug}>
+            <Link to={estate.slug} key={estate.id}>
               <StyledImageInner key={estate.id}>
                 <IMG image={estate.galeryestate[0].url} alt="foto" />
                 <StyledDesc>

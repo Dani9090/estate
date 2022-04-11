@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
+import { graphql} from "gatsby"
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
-import { Carousel } from "react-responsive-carousel"
+
 import {
   StyledWrapper,
   StyledInner,

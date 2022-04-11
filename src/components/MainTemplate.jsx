@@ -1,9 +1,9 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyle } from "assets/styles/GlobalStyle"
-import { theme } from "assets/styles/theme"
-import Nav from "components/Nav/Nav"
+import { GlobalStyle } from "src/assets/styles/GlobalStyle"
+import { theme } from "src/assets/styles/theme"
+import Nav from "src/components/Nav/Nav"
 import "src/assets/styles/normalize.css"
 import Footer from "./Footer/Footer"
 

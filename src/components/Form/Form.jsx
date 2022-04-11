@@ -1,9 +1,8 @@
-import React from "react"
-import Select from "react-select"
+import React/*, {useState}*/ from "react"
 import { useForm } from "react-hook-form"
 import { ErrorMessage } from "@hookform/error-message"
-import styled from "styled-components"
-import { customStyles } from "src/assets/styles/custom"
+
+
 import {
   StyledWrapper,
   StyledForm,
@@ -14,96 +13,48 @@ import {
   P,
   StyledController,
   StyledRadioWrapper,
+    Select,
+  StyledButton,
+  StyledTitleSection,
+  StyledTitle,
+  Back,
+  H1
+
 } from "./FormStyles"
 
-const StyledButton = styled.div`
-  width: 100%;
-  margin: 30px 0;
-  height: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 
-  input {
-    width: 300px;
-    height: 40px;
-    border: 1px solid ${({ theme }) => theme.orange};
-    background-color: ${({ theme }) => theme.black};
-    color: ${({ theme }) => theme.white};
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    font-weight: 600;
-  }
-
-  p {
-    color: ${({ theme }) => theme.white};
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    font-weight: 400;
-    padding-top: 20px;
-    font-size: ${({ theme }) => theme.font.size.xxs};
-  }
-`
-
-const StyledTitleSection = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  &::after {
-    position: absolute;
-    content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
-    background-color: ${({ theme }) => theme.orange};
-    right: 30px;
-    top: 29px;
-  }
-`
-const StyledTitle = styled.div`
-  width: 200px;
-  height: auto;
-  margin: 40px 0px 10px 0px;
-  color: ${({ theme }) => theme.white};
-  font-family: ${({ theme }) => theme.font.family.gilda};
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  position: relative;
-`
-const Back = styled.div`
-  width: 150px;
-  height: 60px;
-  background-color: ${({ theme }) => theme.orange};
-  position: absolute;
-  left: -48px;
-  top: 0;
-  border-radius: 2px;
-  z-index: 1;
-`
-const H1 = styled.p`
-  margin: 0;
-  text-align: center;
-  color: white;
-  font-weight: 500;
-  font-size: ${({ theme }) => theme.font.size.xxl};
-  z-index: 999;
-  position: relative;
-  font-family: ${({ theme }) => theme.font.family.gilda};
-`
 
 export default function Form() {
+
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      firstName: "",
-      select: {},
-    },
-  })
-  const onSubmit = data => console.log(data)
+  } = useForm()
 
+async function onSubmit (data){
+
+    const body = {
+       data: data
+    };
+    const res = await fetch(
+        `${process.env.GATSBY_SERVERLESS_BASE}/SendMail`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        }
+    );
+    const text = JSON.parse(await res.text());
+    if (res.status >= 400 && res.status < 600) {
+      console.log(text.message);
+    } else {
+      console.log('Success! Mail send');
+    }
+  }
   const options = [
     { value: "mieszkanie", label: "Mieszkanie" },
     { value: "dom", label: "Dom" },
@@ -125,14 +76,14 @@ export default function Form() {
             <StyledInner>
               <ErrorMessage
                 errors={errors}
-                name="First name"
+                name="FirstName"
                 render={({ message }) => <p className="error">{message}</p>}
               />
               <p>Imie </p>
               <input
                 type="text"
                 placeholder="Imie"
-                {...register("First name", {
+                {...register("FirstName", {
                   required: "Podaj imie",
                   maxLength: 80,
                 })}
@@ -153,7 +104,10 @@ export default function Form() {
                 placeholder="E-mail"
                 {...register("Email", {
                   required: "Podaj Email",
-                  pattern: /^\S+@\S+$/i,
+                  pattern:{
+                    value: /^\S+@\S+$/i,
+                    message:"Co to ma byc"
+                  } ,
                 })}
               />
             </StyledInner>
@@ -168,6 +122,7 @@ export default function Form() {
               <p>Nr księgi wieczystej </p>
               <input
                 type="text"
+                name="message"
                 placeholder="Nr księgi wieczystej "
                 {...register("Book", {
                   required: "Podaj numer księgi",
@@ -179,12 +134,12 @@ export default function Form() {
           <StyledSection>
             <StyledController>
               <p>Rodzaj nieruchomości</p>
-              <Select
-                label="Age"
-                options={options}
-                styles={customStyles}
-                width="200px"
-              />
+              <Select {...register("EstateType") } name="EstateType" defaultValue={'DEFAULT'} >
+                <option value="DEFAULT" selected disabled>Wybierz rodzaj</option>
+                {options.map(option =>(
+                <option key={option.value} value={option.label}>{option.label}</option>
+                ))}
+              </Select>
             </StyledController>
           </StyledSection>
           <StyledSection>
@@ -209,14 +164,14 @@ export default function Form() {
             <StyledInner>
               <ErrorMessage
                 errors={errors}
-                name="Mobile number"
+                name="MobileNumber"
                 render={({ message }) => <p className="error">{message}</p>}
               />
               <p>Telefon kontaktowy</p>
               <input
                 type="tel"
                 placeholder="Telefon kontaktowy"
-                {...register("Mobile number", {
+                {...register("MobileNumber", {
                   required: "Podaj numer telefonu",
                   minLength: 6,
                   maxLength: 12,
@@ -252,7 +207,7 @@ export default function Form() {
               />
               <p className="see">Piętro </p>
               <input
-                type="text"
+                type="number"
                 placeholder="Piętro"
                 {...register("Floor", {
                   required: "Podaj piętro",
@@ -292,7 +247,7 @@ export default function Form() {
                 placeholder="Rok budowy"
                 {...register("Year", {
                   required: "Podaj rok budowy",
-                  maxLength: 10,
+                  maxLength: 6,
                 })}
               />
             </StyledInner>
@@ -320,15 +275,16 @@ export default function Form() {
           <StyledSection>
             <StyledRadioWrapper>
               <StyledRadio>
-                <input {...register("balcony")} type="radio" value="Yes" />
-                <P>Balkon</P>
+                <label>
+                <input {...register("balcony")} type="checkbox" value='Jest' />
+                Balkon</label>
               </StyledRadio>
               <StyledRadio>
-                <input {...register("lift")} type="radio" value="Yes" />
+                <input {...register("lift")} type="checkbox"  value='Jest'/>
                 <P>Winda</P>
               </StyledRadio>
               <StyledRadio>
-                <input {...register("parking")} type="radio" value="Yes" />
+                <input {...register("parking")} type="checkbox" value='Jest'/>
                 <P>Miejsce parkingowe</P>
               </StyledRadio>
             </StyledRadioWrapper>

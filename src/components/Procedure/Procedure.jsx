@@ -65,7 +65,7 @@ const StyledInner = styled.div`
   }
 `
 
-const StyledTitle = styled.h2`
+const StyledTitle = styled.div`
   height: 120px;
   padding: 20px 0;
   color: ${({ theme }) => theme.white};
@@ -108,8 +108,22 @@ const H1 = styled.h1`
   z-index: 9999;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.gilda};
+  font-size: ${({ theme }) => theme.font.size.xxl};
+  &::before{
+    z-index: -1;
+    position: absolute;
+    content: '';
+    width: auto;
+    min-width: 180px;
+    height:  calc(${({ theme }) => theme.font.size.xxl} *1.4);
+    background-color: black;
+    border-radius: 2px;
+    right: 50%;
+    top: calc(-${({ theme }) => theme.font.size.xxl} / 7);
+ 
+  }
 `
-const Back = styled.div`
+/*const Back = styled.div`
   width: 200px;
   height: 70px;
   background-color: black;
@@ -118,7 +132,7 @@ const Back = styled.div`
   left: 50%;
   top: 57px;
   z-index: 1;
-`
+`*/
 
 const Procedure = () => {
   const data = useStaticQuery(graphql`
@@ -139,8 +153,7 @@ const Procedure = () => {
   return (
     <StyledWrapper>
       <StyledTitle>
-        <Back />
-        <H1>Procedura</H1>
+         <H1>Procedura</H1>
       </StyledTitle>
       <StyledInner>
         {data.allDatoCmsProcedure.nodes.map(procedure => (

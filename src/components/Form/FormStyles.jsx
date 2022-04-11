@@ -28,6 +28,7 @@ export const StyledForm = styled.div`
   margin: 50px 0;
   position: relative;
 `
+
 export const StyledPerson = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -40,7 +41,7 @@ export const StyledSection = styled.div`
   justify-content: center;
 `
 
-export const StyledInner = styled.form`
+export const StyledInner = styled.div`
   width: auto;
   display: flex;
   justify-content: flex-start;
@@ -117,7 +118,7 @@ export const StyledRadioWrapper = styled.div`
   justify-content: space-between;
 `
 
-export const StyledRadio = styled.form`
+export const StyledRadio = styled.div`
   max-width: 270px;
   width: auto;
   height: 60px;
@@ -133,6 +134,10 @@ export const StyledRadio = styled.form`
   z-index: 1;
   background-color: ${({ theme }) => theme.brown};
   position: relative;
+  input{
+    width: 15px;
+    height: 15px;
+   }
 
   .error {
     width: auto;
@@ -167,7 +172,7 @@ export const StyledController = styled.div`
     padding: 0 5px;
     position: absolute;
     top: -25px;
-    left: 50px;
+    left: 10px;
     color: ${({ theme }) => theme.orange};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-size: ${({ theme }) => theme.font.size.xs};
@@ -182,4 +187,124 @@ export const StyledController = styled.div`
   .css-1jwi8f4-singleValue {
     color: ${({ theme }) => theme.white};
   }
+`
+export const Select=styled.select`
+width: auto;
+  min-width: 450px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+  color: ${({ theme }) => theme.white};     
+  height: 60px;
+  border: 1px solid ${({ theme }) => theme.orange};
+  border-radius: 5px;   
+  background-color: ${({ theme }) => theme.brown};
+  padding-left: 5px;
+  font-family: ${({ theme }) => theme.font.family.montserrat};
+  font-weight: 300;
+    &::placeholder {
+      padding: 5px;
+    }
+
+   option{
+     border: 1px solid red;
+   }
+
+  p {
+    width: auto;
+    height: 20px;
+    padding: 0 5px;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: ${({ theme }) => theme.orange};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    font-size: ${({ theme }) => theme.font.size.xs};
+    background: linear-gradient(
+      to top,
+      ${({ theme }) => theme.brown} 50%,
+      ${({ theme }) => theme.black} 0%
+    );
+    z-index: 9;
+  }
+
+  .error {
+    z-index: 999;
+    color: red;
+  }
+`
+export const StyledButton = styled.div`
+  width: 100%;
+  margin: 30px 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid ${({ theme }) => theme.orange};
+    background-color: ${({ theme }) => theme.brown};
+    color: ${({ theme }) => theme.white};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    font-weight: 600;
+  }
+
+  p {
+    color: ${({ theme }) => theme.white};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    font-weight: 400;
+    padding-top: 20px;
+    font-size: ${({ theme }) => theme.font.size.xxs};
+  }
+`
+
+export const StyledTitleSection = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
+    background-color: ${({ theme }) => theme.orange};
+    right: 30px;
+    top: 29px;
+  }
+`
+export const StyledTitle = styled.div`
+  width: 200px;
+  height: auto;
+  margin: 40px 0px 10px 0px;
+  color: ${({ theme }) => theme.white};
+  font-family: ${({ theme }) => theme.font.family.gilda};
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  position: relative;
+`
+export const Back = styled.div`
+  width: 150px;
+  height: 60px;
+  background-color: ${({ theme }) => theme.orange};
+  position: absolute;
+  left: -48px;
+  top: 0;
+  border-radius: 2px;
+  z-index: 1;
+`
+export const H1 = styled.p`
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: ${({ theme }) => theme.font.size.xxl};
+  z-index: 999;
+  position: relative;
+  font-family: ${({ theme }) => theme.font.family.gilda};
 `
