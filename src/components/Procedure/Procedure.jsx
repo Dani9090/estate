@@ -151,7 +151,7 @@ const Procedure = () => {
     }
   `)
   return (
-    <StyledWrapper>
+    <StyledWrapper id="procedura">
       <StyledTitle>
          <H1>Procedura</H1>
       </StyledTitle>

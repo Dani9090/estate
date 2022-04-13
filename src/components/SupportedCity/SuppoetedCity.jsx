@@ -161,7 +161,7 @@ const SupportedCity = () => {
     }
   `)
   return (
-    <StyledWrapper>
+    <StyledWrapper id="obslugiwaneMiasta">
       <StyledTitleWrapper>
         <StyledTitle>
           <Back />

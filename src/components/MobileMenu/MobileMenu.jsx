@@ -6,13 +6,15 @@ import { Link } from "gatsby"
 const StyledWrapper = styled.div`
   position: fixed;
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
+  border: 1px solid red;
   background-color: ${({ theme }) => theme.white};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   left: 0;
+  top:0;
   z-index: 9998;
   transform: translateX(${({ isOpen }) => (isOpen ? "0%" : "-100%")});
   transition: transform 0.25s ease-in-out;
@@ -38,13 +40,13 @@ const MenuLink = styled.li`
   list-style-type: none;
   border: none;
   background-color: transparent;
-`
+`;
 
 const StyledOffertMenu = styled.ul`
   width: 100%;
   height: ${({ isOffertOpen }) => (isOffertOpen ? "auto" : "0")};
   list-style: none;
-  font-family: ${({ theme }) => theme.font.family.Montserrat};
+  font-family: ${({ theme }) => theme.font.family.montserrat};
   font-size: ${({ theme }) => theme.font.size.s};
   opacity: ${({ isOffertOpen }) => (isOffertOpen ? "1" : "1")};
   transform: translateX(
@@ -64,40 +66,37 @@ const Links = styled(Link)`
 
   text-decoration: none;
   color: ${({ theme }) => theme.black};
+`;
+const H2=styled.h2`
+  height: 15vh;
+  font-family: ${({ theme }) => theme.font.family.montserrat};
+  
 `
 
-const MobileMenu = ({ isOpen }) => {
-  const [isOffertOpen, setOffertOpen] = useState(false)
-
-  const toogleOffertFree = () => {
-    setOffertOpen(!isOffertOpen)
+const MobileMenu = ({ isOpen, setMenuState }) => {
+  const toogleMobileMenu = () => {
+    setMenuState(false)
   }
-
   return (
-    <StyledWrapper isOpen={isOpen}>
+    <StyledWrapper onClick={toogleMobileMenu} isOpen={isOpen}>
+
+      <Links onClick={toogleMobileMenu} to="/">Z-lokatorem</Links>
       <MenuLinkWraper>
+
         <MenuLink isOpen={isOpen}>
-          <Links to="/">Start</Links>
-        </MenuLink>
-        <MenuLink as="button" onClick={toogleOffertFree} isOpen={isOpen}>
-          Oferta
-        </MenuLink>
-        <StyledOffertMenu isOffertOpen={isOffertOpen}>
-          <MenuLink isOpen={isOpen}>
-            <Links to="/miody_tradycyjne">Miody tradycyjne</Links>
-          </MenuLink>
-          <MenuLink isOpen={isOpen}>
-            <Links to="/miody_smakowe">Miody smakowe</Links>
-          </MenuLink>
-        </StyledOffertMenu>
-        <MenuLink isOpen={isOpen}>
-          <Links to="/about/">O nas</Links>
+          <Links onClick={toogleMobileMenu} to="/#onas" >O nas </Links>
         </MenuLink>
         <MenuLink isOpen={isOpen}>
-          <Links to="/news/">Aktalności</Links>
+         <Links to="/#procedura">Procedura</Links>
         </MenuLink>
         <MenuLink isOpen={isOpen}>
-          <Links to="/contact/">Kontakt</Links>
+          <Links to="/nieruchomosci/">Nieruchomości</Links>
+        </MenuLink>
+        <MenuLink isOpen={isOpen}>
+          <Links  to="/#kontakt">Kontakt</Links>
+        </MenuLink>
+        <MenuLink isOpen={isOpen}>
+          <Links to="/#obslugiwaneMiasta">Obsługiwane Miasta</Links>
         </MenuLink>
       </MenuLinkWraper>
     </StyledWrapper>

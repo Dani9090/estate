@@ -32,7 +32,7 @@ const Footer = () => {
     <StyledFooter>
       <StyledWrapper>
         <TopSide>
-          <Links noborder to="/">
+          <Links to="/">
             <Phone>
               <p>Zadzwoń </p>
 
