@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled, { css } from "styled-components";
 
 export const StyledWrapper = styled.form`
   width: 100%;
@@ -20,7 +20,7 @@ export const StyledWrapper = styled.form`
     background-color: ${({ theme }) => theme.orange};
     left: 30px;
     bottom: 30px;
-  }
+  };
 `
 
 export const StyledForm = styled.div`
@@ -59,7 +59,7 @@ export const StyledInner = styled.div`
     color: ${({ theme }) => theme.white};
     padding-left: 5px;
     padding-top: 15px;
-  }
+  };
 
   input {
     min-width: 450px;
@@ -84,8 +84,8 @@ export const StyledInner = styled.div`
           position: relative;
           top: -33px;
           font-size: 16px;
-        }
-      `}
+        };
+      `};
   }
 
   p {
@@ -104,12 +104,12 @@ export const StyledInner = styled.div`
       ${({ theme }) => theme.black} 0%
     );
     z-index: 9;
-  }
+  };
 
   .error {
     z-index: 999;
     color: red;
-  }
+  };
 `
 
 export const StyledRadioWrapper = styled.div`
@@ -191,28 +191,26 @@ export const StyledController = styled.div`
   
 `
 export const Select=styled.select`
-width: auto;
+  width: auto;
   min-width: 450px;
   display: flex;
   justify-content: flex-start;
   position: relative;
   z-index: 1;
-  color: ${({ theme }) => theme.white};     
+  color: ${({ theme }) => theme.white};
   height: 60px;
   border: 1px solid ${({ theme }) => theme.orange};
-  border-radius: 5px;   
+  border-radius: 5px;
   background-color: ${({ theme }) => theme.brown};
   padding-left: 5px;
   font-family: ${({ theme }) => theme.font.family.montserrat};
   font-weight: 300;
-    &::placeholder {
-      padding: 5px;
-    }
-
-   option{
-     border: 1px solid red;
-   }
-
+  &::placeholder {
+    padding: 5px;
+  }
+  option{
+    border: 1px solid red;
+  }
   p {
     width: auto;
     height: 20px;
@@ -224,17 +222,16 @@ width: auto;
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-size: ${({ theme }) => theme.font.size.xs};
     background: linear-gradient(
-      to top,
-      ${({ theme }) => theme.brown} 50%,
-      ${({ theme }) => theme.black} 0%
+            to top,
+            ${({ theme }) => theme.brown} 50%,
+            ${({ theme }) => theme.black} 0%
     );
     z-index: 9;
-  }
-
+  };
   .error {
     z-index: 999;
     color: red;
-  }
+  };
 `
 export const StyledButton = styled.div`
   width: 100%;
@@ -243,8 +240,12 @@ export const StyledButton = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+<<<<<<< HEAD
 
   button {
+=======
+  input {
+>>>>>>> 4e5180e4f21ac1ba53bf19d4d7e6963ef6d14a6e
     width: 300px;
     height: 40px;
     border: 1px solid ${({ theme }) => theme.orange};
@@ -252,15 +253,14 @@ export const StyledButton = styled.div`
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 600;
-  }
-
+  };
   p {
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 400;
     padding-top: 20px;
     font-size: ${({ theme }) => theme.font.size.xxs};
-  }
+  };
 `
 
 export const StyledTitleSection = styled.div`
@@ -277,7 +277,7 @@ export const StyledTitleSection = styled.div`
     background-color: ${({ theme }) => theme.orange};
     right: 30px;
     top: 29px;
-  }
+  };
 `
 export const StyledTitle = styled.div`
   width: 200px;

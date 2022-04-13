@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80412e83-7590-4c85-8246-d784f0aabc6b" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/components/Form/FOrmik2.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
@@ -9,6 +10,21 @@
       <change beforePath="$PROJECT_DIR$/src/components/Form/FOrmik.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/FOrmik.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/components/Hamburger/Hamburger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/SendMail/SendMail.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/SendMail/SendMail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/FOrmik.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/FormStyles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileMenu/MobileMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileMenu/MobileMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Nav/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Procedure/Procedure.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SupportedCity/SuppoetedCity.jsx" afterDir="false" />
+>>>>>>> 4e5180e4f21ac1ba53bf19d4d7e6963ef6d14a6e
       <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -45,13 +62,21 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
+=======
+    "last_opened_file_path": "C:/Users/dsiwik/projects/Estate",
+>>>>>>> 4e5180e4f21ac1ba53bf19d4d7e6963ef6d14a6e
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Users\Daniel\projects\estate\src\components\Form" />
+=======
+      <recent name="C:\Users\dsiwik\projects\Estate" />
+>>>>>>> 4e5180e4f21ac1ba53bf19d4d7e6963ef6d14a6e
       <recent name="C:\Users\dsiwik\projects\Estate\src\components\Estate" />
     </key>
   </component>
@@ -75,10 +100,17 @@
       <workItem from="1648551970918" duration="4863000" />
       <workItem from="1648622400216" duration="32424000" />
       <workItem from="1649052110631" duration="53372000" />
+<<<<<<< HEAD
       <workItem from="1649399888822" duration="21206000" />
       <workItem from="1649672660635" duration="6972000" />
       <workItem from="1649694557544" duration="6014000" />
       <workItem from="1649701106023" duration="5168000" />
+=======
+      <workItem from="1649399888822" duration="21367000" />
+      <workItem from="1649675993093" duration="747000" />
+      <workItem from="1649741901429" duration="7443000" />
+      <workItem from="1649753389881" duration="23499000" />
+>>>>>>> 4e5180e4f21ac1ba53bf19d4d7e6963ef6d14a6e
     </task>
     <servers />
   </component>

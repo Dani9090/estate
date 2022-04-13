@@ -3,25 +3,37 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`
-  width: 100%;
-  height: auto;
-  border: 1px ${({ theme }) => theme.orange} solid;
-  background-color: ${({ theme }) => theme.orange};
-  position: relative;
+    width: 100%;
+    height: auto;
+    border: 1px ${({ theme }) => theme.orange} solid;
+    background-color: ${({ theme }) => theme.orange};
+    position: relative;
 
-  p {
-    height: 50px;
-    width: 80%;
-    padding: 5px;
-    margin: 0 auto;
-    color: ${({ theme }) => theme.black};
-    text-align: center;
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    font-size: ${({ theme }) => theme.font.size.xxs};
-    font-weight: 600;
+    p {
+      height: 50px;
+      width: 80%;
+      padding: 5px;
+      margin: 0 auto;
+      color: ${({ theme }) => theme.black};
+      text-align: center;
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-size: ${({ theme }) => theme.font.size.xxs};
+      font-weight: 600;
 
-    .without {
-      font-weight: 400;
+      .without {
+        font-weight: 400;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        clip-path: polygon(0 0, 100% 0, 100% 8%, 8% 8%, 8% 100%, 0% 100%);
+        background-color: ${({ theme }) => theme.black};
+        left: 10px;
+        top: 10px;
+      }
     }
 
     &::after {
@@ -29,22 +41,55 @@ const StyledWrapper = styled.div`
       content: "";
       width: 100px;
       height: 100px;
-      clip-path: polygon(0 0, 100% 0, 100% 13%, 13% 13%, 13% 100%, 0% 100%);
+      clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0, 92% 0, 92% 92%);
       background-color: ${({ theme }) => theme.black};
-      left: 30px;
-      top: 30px;
+      right: 10px;
+      bottom: 10px;
     }
-  }
+  ${({theme}) => theme.media.desktop} {
+    width: 100%;
+    height: auto;
+    border: 1px ${({ theme }) => theme.orange} solid;
+    background-color: ${({ theme }) => theme.orange};
+    position: relative;
 
-  &::after {
-    position: absolute;
-    content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 87%, 0 100%, 100% 100%, 100% 0, 87% 0, 87% 87%);
-    background-color: ${({ theme }) => theme.black};
-    right: 30px;
-    bottom: 30px;
+    p {
+      height: 50px;
+      width: 80%;
+      padding: 5px;
+      margin: 0 auto;
+      color: ${({ theme }) => theme.black};
+      text-align: center;
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-size: ${({ theme }) => theme.font.size.xxs};
+      font-weight: 600;
+
+      .without {
+        font-weight: 400;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        clip-path: polygon(0 0, 100% 0, 100% 13%, 13% 13%, 13% 100%, 0% 100%);
+        background-color: ${({ theme }) => theme.black};
+        left: 30px;
+        top: 30px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 87%, 0 100%, 100% 100%, 100% 0, 87% 0, 87% 87%);
+      background-color: ${({ theme }) => theme.black};
+      right: 30px;
+      bottom: 30px;
+    }
   }
 `
 const StyledInner = styled.div`
@@ -66,12 +111,23 @@ const StyledInner = styled.div`
 `
 
 const StyledTitle = styled.div`
+  width: 100%;
   height: 120px;
   padding: 20px 0;
   color: ${({ theme }) => theme.white};
-  text-align: center;
   font-family: ${({ theme }) => theme.font.family.gilda};
   font-weight: 400;
+  display: grid;
+  place-items: center;
+  border: 1px red solid;
+  ${({theme}) => theme.media.desktop} {
+    height: 120px;
+    padding: 20px 0;
+    color: ${({ theme }) => theme.white};
+    text-align: center;
+    font-family: ${({ theme }) => theme.font.family.gilda};
+    font-weight: 400;
+  }
 `
 const StyledImage = styled.div`
   position: relative;
@@ -103,24 +159,49 @@ const Number = styled.div`
   font-size: 20px;
 `
 const H1 = styled.h1`
+  width: auto;
+  border: 1px red solid;
   color: white;
   font-weight: 500;
   z-index: 9999;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.gilda};
-  font-size: ${({ theme }) => theme.font.size.xxl};
-  &::before{
+  font-size: ${({ theme }) => theme.font.size.m};
+
+  &::before {
     z-index: -1;
     position: absolute;
     content: '';
     width: auto;
-    min-width: 180px;
-    height:  calc(${({ theme }) => theme.font.size.xxl} *1.4);
+    min-width: 100px;
+    height: calc(${({ theme }) => theme.font.size.m} * 1.4);
     background-color: black;
     border-radius: 2px;
     right: 50%;
-    top: calc(-${({ theme }) => theme.font.size.xxl} / 7);
- 
+    top: calc(-${({ theme }) => theme.font.size.m} / 7);
+
+  }
+  ${({ theme }) => theme.media.desktop} {
+    color: white;
+    font-weight: 500;
+    z-index: 9999;
+    position: relative;
+    font-family: ${({ theme }) => theme.font.family.gilda};
+    font-size: ${({ theme }) => theme.font.size.xxl};
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: '';
+      width: auto;
+      min-width: 180px;
+      height: calc(${({ theme }) => theme.font.size.xxl} * 1.4);
+      background-color: black;
+      border-radius: 2px;
+      right: 50%;
+      top: calc(-${({ theme }) => theme.font.size.xxl} / 7);
+
+    }
   }
 `
 /*const Back = styled.div`
@@ -151,7 +232,7 @@ const Procedure = () => {
     }
   `)
   return (
-    <StyledWrapper>
+    <StyledWrapper id="procedura">
       <StyledTitle>
          <H1>Procedura</H1>
       </StyledTitle>

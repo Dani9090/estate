@@ -1,10 +1,8 @@
 const nodemailer = require('nodemailer');
 
-
 function generateOrderEmail({data}){
     return`<div>
 <h3>Dane zgloszenia</h3>
-<p>${data}</p>
 <p>Email: ${data.Email}</p>
 <p>Numer księgi: ${data.Book}</p>
 <p>RodzajNieruchomosci: ${data.RodzajNieruchomosci}</p>
@@ -16,9 +14,9 @@ function generateOrderEmail({data}){
 <p>Rok budowy: ${data.Year}</p>
 <p>Informacje: ${data.Info}</p>
 <p>Balkon: ${data.balcony}</p>
-<p>${data.lift ? <p>jest<p> : <p>nie ma</p>} }</p>
+<p>Winda: ${data.lift}</p>
 <p>Miejsce parkingowe: ${data.parking}</p>
-</div>`
+</div>`;
 }
 // create a transport for nodemailer
 const transporter = nodemailer.createTransport({
@@ -33,13 +31,15 @@ const transporter = nodemailer.createTransport({
 
 exports.handler = async (event, context) => {
     const body = JSON.parse(event.body);
-    console.log(body.data)
-
+    const data = body.data;
+    Object.keys(data).forEach(key => {
+        if (!data[key]) data[key]='Nie posiada';
+    });
 
     // Test send an email
     const info = await transporter.sendMail({
         from: "Z-lokatorem <test@z-lokatorem.pl>",
-        to: `<${body.data.Email}>,dsiwik@wim.mil.pl`,
+        to: `<${body.data.Email}>` ,
         subject: `Prośba o kontakt od ${body.data.FirstName} | ${body.data.Email}`,
         html: generateOrderEmail({data : body.data}),
     });

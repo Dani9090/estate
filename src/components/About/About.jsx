@@ -4,84 +4,163 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const StyledWrapper = styled.div`
   width: 100%;
-  height: auto;
-  border: 1px solid ${({ theme }) => theme.black};
-  background-color: ${({ theme }) => theme.black};
-  position: relative;
-  margin-top: 50px;
+    height: auto;
+    margin-top: 0;
+    border: 1px solid ${({ theme }) => theme.black};
+    background-color: ${({ theme }) => theme.black};
+    position: relative;
+ 
 
-  p {
-    height: 50px;
-    width: 80%;
-    padding: 5px;
-    margin: 0 auto;
-    color: ${({ theme }) => theme.white};
-    text-align: center;
-    font-family: ${({ theme }) => theme.font.family.montserrat};
-    font-size: ${({ theme }) => theme.font.size.xxs};
+    p {
+      height: 50px;
+      width: 80%;
+      padding: 5px;
+      margin: 0 auto;
+      color: ${({ theme }) => theme.white};
+      text-align: center;
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-size: ${({ theme }) => theme.font.size.xxs};
+      
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: auto;
+    border: 1px solid ${({ theme }) => theme.black};
+    background-color: ${({ theme }) => theme.black};
+    position: relative;
+    margin-top: 50px;
+
+    p {
+      height: 50px;
+      width: 80%;
+      padding: 5px;
+      margin: 0 auto;
+      color: ${({ theme }) => theme.white};
+      text-align: center;
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-size: ${({ theme }) => theme.font.size.xxs};
+
+     /* &::after {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        clip-path: polygon(0 0, 13% 0, 13% 87%, 100% 87%, 100% 100%, 0% 100%);
+        background-color: ${({ theme }) => theme.darkOrange};
+        left: 30px;
+        bottom: 30px;
+      }
+    }
 
     &::after {
       position: absolute;
       content: "";
       width: 100px;
       height: 100px;
-      clip-path: polygon(0 0, 13% 0, 13% 87%, 100% 87%, 100% 100%, 0% 100%);
+      clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
       background-color: ${({ theme }) => theme.darkOrange};
-      left: 30px;
-      bottom: 30px;
-    }
+      right: 30px;
+      top: 50px;
+    }*/
   }
+`
+const StyledInner = styled.div`
+  width:100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:10px;
+  place-items: center;
+  padding-bottom: 20px;
+ 
+  ${({ theme }) => theme.media.desktop} {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    padding-bottom: 20px;
+    
+  };
+`
 
+const StyledTitle = styled.h1`
+  height: 120px;
+  padding: 20px;
+  color: ${({ theme }) => theme.white};
+  text-align: center;
+  font-family: ${({ theme }) => theme.font.family.gilda};
+  font-size: ${({theme}) => theme.font.size.xxm};
+  font-weight: 400;
+  display: grid;
+  place-items: center;
+  position: relative;
   &::after {
     position: absolute;
     content: "";
     width: 100px;
     height: 100px;
-    clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
+    clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
     background-color: ${({ theme }) => theme.darkOrange};
-    right: 30px;
-    top: 50px;
+    right: 10px;
+    top: 0;
   }
-`
-const StyledInner = styled.div`
-  width: 90%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  padding-bottom: 20px;
-
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
+  ${({ theme }) => theme.media.desktop} {
+    height: 120px;
+    padding: 60px 0;
     color: ${({ theme }) => theme.white};
-  }
-`
-
-const StyledTitle = styled.h1`
-  height: 120px;
-  padding: 60px 0;
-  color: ${({ theme }) => theme.white};
-  text-align: center;
-  font-family: ${({ theme }) => theme.font.family.gilda};
-  font-weight: 400;
+    text-align: center;
+    font-family: ${({ theme }) => theme.font.family.gilda};
+    font-weight: 400;
+  };
 `
 
 const StyledBottomDes = styled.div`
   width: 100%;
-  height: 100px;
-  padding-bottom: 140px;
+  height: auto;
+  padding-bottom: 40px;
+  p {
+    width: 100%;
+    height: auto;
+  line-height: 1.5;
+    padding-bottom: 5px
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
+    background-color: ${({ theme }) => theme.darkOrange};
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  ${({theme}) => theme.media.desktop} {
+    width: 100%;
+    height: 100px;
+    padding-bottom: 140px;
+
+    p {
+      height: 30px;
+    }
+  }
+`
+
+const StyledImageWithDes=styled.div`
+width: 100%;
+display: grid;
+  place-items:center;
 
   p {
-    height: 30px;
+    margin: 5px 0;
+    padding: 5px;
+    height: 40px;
   }
 `
 
 const IMG = styled.img`
-  width: 200px;
+  width: 180px;
   height: auto;
 
   ${({ theme }) => theme.media.desktop} {
@@ -116,10 +195,10 @@ const About = () => {
       </StyledTitle>
       <StyledInner>
         {data.allDatoCmsAbout.nodes.map(about => (
-          <div key={about.id}>
+          <StyledImageWithDes key={about.id}>
             <IMG src={about.foto.url} alt="foto" />
             <p>{about.title}</p>
-          </div>
+          </StyledImageWithDes>
         ))}
       </StyledInner>
       <StyledBottomDes>

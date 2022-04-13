@@ -51,6 +51,7 @@ export const theme = {
     phone: "@media (min-width: 350px)",
     tablet: "@media (min-width: 750px)",
     desktop: "@media (min-width: 1024px)",
+    bigDesktop: "@media (min-width: 1280px)",
     large: "@media (min-width: 1545px)",
   },
   mq: {

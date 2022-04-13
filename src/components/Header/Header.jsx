@@ -8,7 +8,6 @@ const StyledHero = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
     position: relative;
@@ -19,7 +18,7 @@ const StyledHero = styled.div`
 const StyleIMG = styled.div`
   display: block;
   width: 100%;
-  height: auto;
+  height: 100vh;
   z-index: 0;
 
   ${({ theme }) => theme.media.desktop} {
@@ -33,7 +32,9 @@ const StyleIMG = styled.div`
 
 const IMG = styled.img`
   width: 100%;
-  height: 250px;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50% 10%;
 
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
@@ -46,19 +47,36 @@ const StyledP = styled.p`
   z-index: 2;
   position: absolute;
   margin: 0 auto;
-  top: 270px;
-  left: 20%;
-  width: 60%;
+  top: 30vh;
+  left: 15%;
+  width: 70%;
   height: 230px;
-  color: ${({ theme }) => theme.white};
-  font-family: ${({ theme }) => theme.font.family.gilda};
-  font-size: ${({ theme }) => theme.font.size.l};
+  color: ${({theme}) => theme.white};
+  font-family: ${({theme}) => theme.font.family.gilda};
+  font-size: ${({theme}) => theme.font.size.xm};
   line-height: 2;
   text-align: center;
-  letter-spacing: 0.1rem; ;
+  letter-spacing: 0.1rem;
+  
+  ${({ theme }) => theme.media.desktop} {
+    z-index: 2;
+    position: absolute;
+    margin: 0 auto;
+    top: 270px;
+    left: 20%;
+    width: 60%;
+    height: 230px;
+    color: ${({theme}) => theme.white};
+    font-family: ${({theme}) => theme.font.family.gilda};
+    font-size: ${({theme}) => theme.font.size.l};
+    line-height: 2;
+    text-align: center;
+    letter-spacing: 0.1rem;
+  }
 `
 
 const Header = () => {
+
   const data = useStaticQuery(graphql`
     query {
       datoCmsHeader {
@@ -72,10 +90,7 @@ const Header = () => {
 
   return (
     <StyledHero>
-      {/* <StyledNav2>
-        <Nav />
-      </StyledNav2> */}
-      <StyleIMG>
+        <StyleIMG>
         <IMG src={data.datoCmsHeader.header.url} />
         <StyledP>{data.datoCmsHeader.description}</StyledP>
       </StyleIMG>
