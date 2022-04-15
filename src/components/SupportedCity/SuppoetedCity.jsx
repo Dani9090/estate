@@ -12,10 +12,16 @@ const StyledWrapper = styled.div`
   line-height: 1.5;
 `
 const StyledInner = styled.div`
-  width: 80%;
+  width: 100vw;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  ${({ theme }) => theme.media.desktop} {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 `
 const StyledTitleWrapper = styled.div`
   width: 100%;
@@ -27,52 +33,75 @@ const StyledTitleWrapper = styled.div`
   &::after {
     position: absolute;
     content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
+    width: 90px;
+    height: 90px;
+    clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
     background-color: ${({ theme }) => theme.orange};
-    right: 30px;
-    top: 29px;
+    right: 10px;
+    top: 10px;
   }
 `
 const StyledTitle = styled.div`
-  width: 530px;
+  width: auto;
   height: 60px;
-  margin-top: 60px;
+  margin-top: 40px;
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.gilda};
   font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   position: relative;
-`
-const Back = styled.div`
-  width: 190px;
-  height: 60px;
-  background-color: ${({ theme }) => theme.orange};
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-radius: 2px;
-  z-index: 1;
+  ${({ theme }) => theme.media.desktop} {
+    width: 530px;
+    height: 60px;
+    margin-top: 60px;
+    color: ${({ theme }) => theme.white};
+    font-family: ${({ theme }) => theme.font.family.gilda};
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 `
 const H1 = styled.p`
   margin: 0;
   text-align: center;
   color: white;
   font-weight: 500;
-  font-size: ${({ theme }) => theme.font.size.xxl};
+  font-size: ${({ theme }) => theme.font.size.m};
   z-index: 999;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.gilda};
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    width: auto;
+    min-width: 100px;
+    height: calc(${({ theme }) => theme.font.size.m} * 1.4);
+    background-color: ${({ theme }) => theme.orange};
+    border-radius: 2px;
+    right: -20px;
+    top: calc(-${({ theme }) => theme.font.size.m} / 8);
+
+  }
+  ${({ theme }) => theme.media.desktop} {  
+    font-size: ${({ theme }) => theme.font.size.xxl};   
+  }
 `
 
 const StyledLeftSide = styled.div`
-  width: 50%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   position: relative;
+  ${({ theme }) => theme.media.desktop} {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
 `
 
 const StyledRightSide = styled.div`
@@ -134,7 +163,7 @@ const Bottom = styled.div`
     content: "";
     width: 100px;
     height: 100px;
-    clip-path: polygon(0 0, 13% 0, 13% 87%, 100% 87%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 8% 0, 8% 87%, 100% 87%, 100% 100%, 0% 100%);
     background-color: ${({ theme }) => theme.orange};
     left: 30px;
     bottom: 30px;
@@ -164,8 +193,7 @@ const SupportedCity = () => {
     <StyledWrapper id="obslugiwaneMiasta">
       <StyledTitleWrapper>
         <StyledTitle>
-          <Back />
-          <H1>Obsługiwane Miasta</H1>
+           <H1>Obsługiwane Miasta</H1>
         </StyledTitle>
       </StyledTitleWrapper>
       {data.allDatoCmsSupportedcity.nodes.map(support => (

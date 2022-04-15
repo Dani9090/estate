@@ -10,31 +10,23 @@ const StyledWrapper = styled.div`
     position: relative;
 
     p {
-      height: 50px;
+      height: auto;
       width: 80%;
-      padding: 5px;
+      padding: 25px 0 10px 0;
       margin: 0 auto;
       color: ${({ theme }) => theme.black};
       text-align: center;
       font-family: ${({ theme }) => theme.font.family.montserrat};
-      font-size: ${({ theme }) => theme.font.size.xxs};
+      font-size: ${({ theme }) => theme.font.size.xs};
       font-weight: 600;
-
-      .without {
-        font-weight: 400;
+     
       }
-
-      &::after {
-        position: absolute;
-        content: "";
-        width: 100px;
-        height: 100px;
-        clip-path: polygon(0 0, 100% 0, 100% 8%, 8% 8%, 8% 100%, 0% 100%);
-        background-color: ${({ theme }) => theme.black};
-        left: 10px;
-        top: 10px;
-      }
-    }
+  .without {
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    padding: 0 0 20px 0 ;
+    font-weight: 500;
+   
+  }
 
     &::after {
       position: absolute;
@@ -101,16 +93,18 @@ const StyledInner = styled.div`
   padding: 20px 0 70px 0;
 
   div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     flex-direction: column;
     margin: 0 auto;
     color: ${({ theme }) => theme.white};
   }
+  
 `
 
+
 const StyledTitle = styled.div`
+  
   width: 100%;
   height: 120px;
   padding: 20px 0;
@@ -119,7 +113,16 @@ const StyledTitle = styled.div`
   font-weight: 400;
   display: grid;
   place-items: center;
-  border: 1px red solid;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 8%, 8% 8%, 8% 100%, 0% 100%);
+    background-color: ${({ theme }) => theme.black};
+    left: 10px;
+    top: 10px;
+  }
   ${({theme}) => theme.media.desktop} {
     height: 120px;
     padding: 20px 0;
@@ -131,14 +134,23 @@ const StyledTitle = styled.div`
 `
 const StyledImage = styled.div`
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   background-color: white;
+
+  ${({theme}) => theme.media.desktop} {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    border-radius: 100%;
+    background-color: white;
+  }
 `
 const IMG = styled.img`
-  width: 150px;
-  max-height: 200px;
+  width: 110px;
+
+  max-height: 120px;
   height: auto;
 
   ${({ theme }) => theme.media.desktop} {
@@ -149,18 +161,28 @@ const IMG = styled.img`
 `
 const Number = styled.div`
   position: absolute;
-  bottom: 0;
-  left: 40px;
-  width: 45px;
-  height: 45px;
+  bottom: -10px;
+  left: 35px;
+  width: 40px;
+  height: 40px;
   background-color: black;
   border-radius: 100%;
   font-family: ${({ theme }) => theme.font.family.montserrat};
   font-size: 20px;
+  ${({ theme }) => theme.media.desktop} {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    border-radius: 100%;
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    font-size: 20px;
+  }
 `
 const H1 = styled.h1`
   width: auto;
-  border: 1px red solid;
   color: white;
   font-weight: 500;
   z-index: 9999;
@@ -177,7 +199,7 @@ const H1 = styled.h1`
     height: calc(${({ theme }) => theme.font.size.m} * 1.4);
     background-color: black;
     border-radius: 2px;
-    right: 50%;
+    right: 47%;
     top: calc(-${({ theme }) => theme.font.size.m} / 7);
 
   }
@@ -244,7 +266,7 @@ const Procedure = () => {
               <IMG src={procedure.image.url} alt="a" />
             </StyledImage>
             <p>{procedure.title}</p>
-            <p className="without">{procedure.description}</p>
+            {procedure.description ? (<p className="without">{procedure.description}</p>) : <p></p>}
           </div>
         ))}
       </StyledInner>

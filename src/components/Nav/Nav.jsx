@@ -58,9 +58,7 @@ const StyledInner = styled.div`
   display: flex;
 
   ${({theme}) => theme.media.desktop} {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
+    width: 99vw;
     display: grid;
     grid-template-columns: 0.7fr 1.3fr;
   }
@@ -82,6 +80,7 @@ const StyledNav = styled.nav`
     justify-content: flex-end;
     align-items: center;
     font-family: ${({theme}) => theme.font.family.gilda};
+  
   }
 `
 

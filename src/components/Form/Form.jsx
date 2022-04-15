@@ -17,7 +17,7 @@ import {
     StyledButton,
     StyledTitleSection,
     StyledTitle,
-    Back,
+
     H1
 
 } from "./FormStyles"
@@ -41,13 +41,9 @@ export default function Form() {
 
 
     async function onSubmit(data) {
-
-        console.log(data)
-
         const body = {
             data : data
         };
-
         const res = await fetch(
             `${process.env.GATSBY_SERVERLESS_BASE}/SendMail`,
             {
@@ -59,17 +55,13 @@ export default function Form() {
                 body: JSON.stringify(body),
             }
         );
-        // check if everything worked
         const text = JSON.parse(await res.text());
-
-
         if (res.status >= 400 && res.status < 600) {
             console.log(text.message);
         } else {
            alert('Success! Mail send');
         }
     }
-
     const options = [
         {value: "mieszkanie", label: "Mieszkanie"},
         {value: "dom", label: "Dom"},
@@ -81,7 +73,7 @@ export default function Form() {
         <StyledWrapper id="kontakt" onSubmit={handleSubmit(onSubmit)}>
             <StyledTitleSection>
                 <StyledTitle>
-                    <Back/>
+
                     <H1>Kontakt</H1>
                 </StyledTitle>
             </StyledTitleSection>
@@ -150,8 +142,8 @@ export default function Form() {
                     <StyledSection>
                         <StyledController>
                             <p>Rodzaj nieruchomości</p>
-                            <Select {...register("EstateType")} name="EstateType" defaultValue="a">
-                                <option value="DEFAULT" selected disabled>Wybierz rodzaj</option>
+                            <Select {...register("EstateType")} menuIsOpen={true} name="EstateType" >
+                                <option disabled>Wybierz rodzaj</option>
                                 {options.map(option => (
                                     <option key={option.value} value={option.label}>{option.label}</option>
                                 ))}
@@ -293,15 +285,17 @@ export default function Form() {
                             <StyledRadio>
                                 <label>
                                     <input {...register("balcony")} type="checkbox" value='Jest'/>
-                                    Balkon</label>
+                                     Balkon</label>
                             </StyledRadio>
                             <StyledRadio>
+                                <label>
                                 <input {...register("lift")} type="checkbox" value='Jest'/>
-                                <P>Winda</P>
+                                Winda</label>
                             </StyledRadio>
                             <StyledRadio>
+                                <label>
                                 <input {...register("parking")} type="checkbox" value='Jest'/>
-                                <P>Miejsce parkingowe</P>
+                                Miejsce parkingowe</label>
                             </StyledRadio>
                         </StyledRadioWrapper>
                     </StyledSection>

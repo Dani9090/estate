@@ -67,11 +67,7 @@ const Links = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) => theme.black};
 `;
-const H2=styled.h2`
-  height: 15vh;
-  font-family: ${({ theme }) => theme.font.family.montserrat};
-  
-`
+
 
 const MobileMenu = ({ isOpen, setMenuState }) => {
   const toogleMobileMenu = () => {
