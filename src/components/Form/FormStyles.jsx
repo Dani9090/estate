@@ -340,13 +340,23 @@ export const StyledButton = styled.div`
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 600;
   }
-
   p {
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 400;
-    padding-top: 20px;
+    padding-top: 30px;
+    text-align: center;
     font-size: ${({ theme }) => theme.font.size.xxs};
+  }
+  ${({ theme }) => theme.media.desktop} {
+    p {
+      border: 1px solid red;
+      color: ${({ theme }) => theme.white};
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-weight: 400;
+      padding-top: 20px;
+      font-size: ${({ theme }) => theme.font.size.xxs};
+    }
   }
 `;
 

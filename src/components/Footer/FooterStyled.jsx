@@ -2,17 +2,28 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const StyledFooter = styled.div`
-  width: 100%;
-  height: 285px;
+  width: 100vw;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: ${({ theme }) => theme.blackDark};
+
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: 285px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: ${({ theme }) => theme.blackDark};
+    border: 1px solid red;
+  }
 `
 export const StyledWrapper = styled.footer`
   width: 100vw;
-  height: 200px;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -74,12 +85,33 @@ export const Links = styled(Link)`
     }
   }
 `
+
 export const Phone = styled.div`
+  width: 80%;
+  max-width: 320px;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  height: auto;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 0.9fr 1.1fr;
   position: relative;
+  border: 1px solid red;
+
+  p {  
+    width: auto;
+    border: 1px solid red;
+    height: 25px;
+    font-weight: 400;
+    max-width: 200px;
+    font-size: ${({ theme }) => theme.font.size.xm};
+    letter-spacing: 0.2em;
+
+    &:last-child {
+
+     font-size: ${({ theme }) => theme.font.size.xm};
+      color: ${({ theme }) => theme.honey};
+    }
+  }
 
   ${({ theme }) => theme.media.desktop} {
     max-width: 200px;

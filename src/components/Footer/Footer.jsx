@@ -11,8 +11,13 @@ import {
 
 const TopSide = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  
+}
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
 `
 
 const StyledNavFooter = styled.ul`

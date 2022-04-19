@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
     const body = JSON.parse(event.body);
     const data = body.data;
     Object.keys(data).forEach(key => {
-        if (!data[key]) data[key]='Nie posiada';
+        if (!data[key]) data[key]='brak informacji';
     });
 
     // Test send an email

@@ -15,6 +15,7 @@ const StyledInner = styled.div`
   width: 100vw;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   ${({ theme }) => theme.media.desktop} {
     width: 80%;
@@ -25,7 +26,7 @@ const StyledInner = styled.div`
 `
 const StyledTitleWrapper = styled.div`
   width: 100%;
-  height: 180px;
+  height: 150px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -39,7 +40,27 @@ const StyledTitleWrapper = styled.div`
     background-color: ${({ theme }) => theme.orange};
     right: 10px;
     top: 10px;
+    
   }
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 90px;
+      height: 90px;
+      clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
+      background-color: ${({ theme }) => theme.orange};
+      right: 10px;
+      top: 10px;
+    }
+  }
+  
 `
 const StyledTitle = styled.div`
   width: auto;
@@ -51,6 +72,7 @@ const StyledTitle = styled.div`
   display: grid;
   place-items: center;
   position: relative;
+ 
   ${({ theme }) => theme.media.desktop} {
     width: 530px;
     height: 60px;
@@ -104,41 +126,72 @@ const StyledLeftSide = styled.div`
   }
 `
 
-const StyledRightSide = styled.div`
-  width: 50%;
+const StyledRightSide = styled.div` 
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 
   p {
-    width: 80%;
+    width: 90%;
     color: ${({ theme }) => theme.white};
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     padding: 30px 0;
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 500;
 
-    &:first-child {
-      padding-top: 0;
+    
+  }
+  
+  ${({ theme }) => theme.media.desktop} {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    p {
+      width: 80%;
+      color: ${({ theme }) => theme.white};
+      text-align: center;
+      margin: 0;
+      padding: 30px 0;
+      color: ${({ theme }) => theme.white};
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-weight: 500;
+
+      &:first-child {
+        padding-top: 0;
+      }
     }
   }
 `
 const StyledH5 = styled.p`
   width: 80%;
-  font-size: ${({ theme }) => theme.font.size.xm};
+  font-size: ${({ theme }) => theme.font.size.xxm};
   color: ${({ theme }) => theme.white};
   margin-bottom: 0;
   padding: 10px 0 0 0 !important;
   text-align: center;
   font-family: ${({ theme }) => theme.font.family.montserrat};
+  ${({ theme }) => theme.media.desktop} {
+    width: 80%;
+    font-size: ${({ theme }) => theme.font.size.xm};
+    color: ${({ theme }) => theme.white};
+    margin-bottom: 0;
+    padding: 10px 0 0 0 !important;
+    text-align: center;
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+  }
 `
 const StyledUL = styled.div`
-  width: 80%;
+  width: 100%;
+  padding-left: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.montserrat};
   font-weight: 500;
@@ -148,25 +201,61 @@ const StyledUL = styled.div`
     width: auto;
     list-style-position: inside;
   }
+  ${({ theme }) => theme.media.desktop} {
+    
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    color: ${({ theme }) => theme.white};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    font-weight: 500;
+    text-align: center;
+
+    li {
+      width: auto;
+      list-style-position: inside;
+    }
+  }
 `
 const IMG = styled.img`
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  ${({ theme }) => theme.media.desktop} {
+    width: 600px;
+    height: 600px;
+  }
 `
 const Bottom = styled.div`
-  width: 100%;
-  height: 100px;
+  width: auto;
+  height: 30px;
   position: relative;
 
   &::after {
     position: absolute;
     content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 0, 8% 0, 8% 87%, 100% 87%, 100% 100%, 0% 100%);
+    width: 90px;
+    height: 90px;
+    clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
     background-color: ${({ theme }) => theme.orange};
-    left: 30px;
-    bottom: 30px;
+    left: 10px;
+    bottom: 10px;
+  }
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: 100px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 90px;
+      height: 90px;
+      clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
+      background-color: ${({ theme }) => theme.orange};
+      left: 10px;
+      bottom: 10px;
+    }
   }
 `
 const SupportedCity = () => {

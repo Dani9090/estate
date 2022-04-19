@@ -20,4 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     overflow-x: hidden;
   }
+  ul{
+    padding-left: 0;
+  }
 `

@@ -10,7 +10,6 @@ import {
     StyledSection,
     StyledInner,
     StyledRadio,
-    P,
     StyledController,
     StyledRadioWrapper,
     Select,
