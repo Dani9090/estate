@@ -18,27 +18,38 @@ const StyledWrapper = styled.div`
       text-align: center;
       font-family: ${({ theme }) => theme.font.family.montserrat};
       font-size: ${({ theme }) => theme.font.size.xs};
-      font-weight: 600;
-     
+      font-weight: 600;     
       }
+  
   .without {
     font-family: ${({ theme }) => theme.font.family.montserrat};
     padding: 0 0 20px 0 ;
-    font-weight: 500;
-   
+    font-weight: 500;   
   }
-
+    &::after {
+      position: absolute;
+      content: "";
+      width: 90px;
+      height: 90px;
+      clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0, 92% 0, 92% 92%);
+      background-color: ${({ theme }) => theme.black};
+      right: 10px;
+      bottom: 10px;
+      
+    }
+  
+  ${({theme}) => theme.media.desktop} {
     &::after {
       position: absolute;
       content: "";
       width: 100px;
       height: 100px;
-      clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0, 92% 0, 92% 92%);
+      clip-path: polygon(100% 0, 100% 12%, 12% 12%, 12% 100%, 0 100%, 0 0);
       background-color: ${({ theme }) => theme.black};
-      right: 10px;
-      bottom: 10px;
+      left: 30px;
+      top: 30px;
     }
-  ${({theme}) => theme.media.desktop} {
+
     width: 100%;
     height: auto;
     border: 1px ${({ theme }) => theme.orange} solid;
@@ -55,40 +66,20 @@ const StyledWrapper = styled.div`
       font-family: ${({ theme }) => theme.font.family.montserrat};
       font-size: ${({ theme }) => theme.font.size.xxs};
       font-weight: 600;
+    }
 
       .without {
         font-weight: 400;
       }
 
-      &::after {
-        position: absolute;
-        content: "";
-        width: 100px;
-        height: 100px;
-        clip-path: polygon(0 0, 100% 0, 100% 13%, 13% 13%, 13% 100%, 0% 100%);
-        background-color: ${({ theme }) => theme.black};
-        left: 30px;
-        top: 30px;
-      }
-    }
-
-    &::after {
-      position: absolute;
-      content: "";
-      width: 100px;
-      height: 100px;
-      clip-path: polygon(0 87%, 0 100%, 100% 100%, 100% 0, 87% 0, 87% 87%);
-      background-color: ${({ theme }) => theme.black};
-      right: 30px;
-      bottom: 30px;
-    }
   }
 `
+
 const StyledInner = styled.div`
   width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
   padding: 20px 0 70px 0;
 
@@ -99,12 +90,67 @@ const StyledInner = styled.div`
     margin: 0 auto;
     color: ${({ theme }) => theme.white};
   }
+
+  ${({ theme }) => theme.media.desktop} {
+   
+    width: 80%;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-content: center;
+    padding: 50px 0;
+     div {
+      display: grid;
+      place-items: center;
+      flex-direction: column;
+       color: ${({ theme }) => theme.white};
+    }
+  }
+  ${({theme}) => theme.media.bigDesktop} {
+
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+    max-width: none;  
+  }
+  ${({theme}) => theme.media.large} {
+  
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    width: 88%;    
+  } ${({theme}) => theme.media.own} {
+   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+   width: 85%;
+  max-width: 1700px;
+  }
+  
   
 `
 
+const StyledImage = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: white;
 
-const StyledTitle = styled.div`
+  ${({theme}) => theme.media.desktop} {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    border-radius: 100%;
+    background-color: white;
+  }
   
+  ${({theme}) => theme.media.large} {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
+    background-color: white;
+   
+  }
+`
+const StyledTitle = styled.div`  
   width: 100%;
   height: 120px;
   padding: 20px 0;
@@ -130,21 +176,9 @@ const StyledTitle = styled.div`
     text-align: center;
     font-family: ${({ theme }) => theme.font.family.gilda};
     font-weight: 400;
-  }
-`
-const StyledImage = styled.div`
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  background-color: white;
-
-  ${({theme}) => theme.media.desktop} {
-    position: relative;
-    width: 260px;
-    height: 260px;
-    border-radius: 100%;
-    background-color: white;
+    &::after {
+      display: none;
+    }
   }
 `
 const IMG = styled.img`
@@ -226,16 +260,23 @@ const H1 = styled.h1`
     }
   }
 `
-/*const Back = styled.div`
-  width: 200px;
-  height: 70px;
-  background-color: black;
-  position: absolute;
-  border-radius: 2px;
-  left: 50%;
-  top: 57px;
-  z-index: 1;
-`*/
+const Corner=styled.div`
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(88% 0, 100% 0, 100% 100%, 0 100%, 0 88%, 88% 88%);
+      background-color: ${({ theme }) => theme.black};
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+`
 
 const Procedure = () => {
   const data = useStaticQuery(graphql`
@@ -270,6 +311,7 @@ const Procedure = () => {
           </div>
         ))}
       </StyledInner>
+      <Corner />
     </StyledWrapper>
   )
 }

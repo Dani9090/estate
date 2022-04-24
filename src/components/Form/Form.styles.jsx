@@ -23,6 +23,20 @@ export const StyledWrapper = styled.form`
     bottom: 10px;
   }
 ;
+  ${({ theme }) => theme.media.desktop} {
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 0, 12% 0, 12% 88%, 100% 88%, 100% 100%, 0% 100%);
+      background-color: ${({ theme }) => theme.orange};
+      left: 30px;
+      bottom: 30px;
+    }
+    
+  }
 `;
 
 export const StyledForm = styled.div`
@@ -349,8 +363,7 @@ export const StyledButton = styled.div`
     font-size: ${({ theme }) => theme.font.size.xxs};
   }
   ${({ theme }) => theme.media.desktop} {
-    p {
-      border: 1px solid red;
+    p {   
       color: ${({ theme }) => theme.white};
       font-family: ${({ theme }) => theme.font.family.montserrat};
       font-weight: 400;
@@ -380,39 +393,24 @@ export const StyledTitleSection = styled.div`
   }
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     position: relative;
-    border: 1px solid red;
-
-    &::after {
-      position: absolute;
-      content: "";
-      width: 90px;
-      height: 90px;
-      clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
-      background-color: ${({ theme }) => theme.orange};
-      right: 10px;
-      top: 10px;
-    }
-  }
-;
-
-  ${({ theme }) => theme.media.desktop} {
 
     &::after {
       position: absolute;
       content: "";
       width: 100px;
       height: 100px;
-      clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
+      clip-path: polygon(0 12%, 0 0, 100% 0, 100% 100%, 88% 100%, 88% 12%);
       background-color: ${({ theme }) => theme.orange};
       right: 30px;
       top: 29px;
     }
-  ;
   }
 `;
+
 export const StyledTitle = styled.div`
   width: 200px;
   height: auto;

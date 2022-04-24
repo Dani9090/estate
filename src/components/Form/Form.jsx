@@ -19,7 +19,7 @@ import {
 
     H1
 
-} from "./FormStyles"
+} from "./Form.styles"
 
 
 export default function Form() {

@@ -18,7 +18,7 @@ export const StyledFooter = styled.div`
     flex-direction: row;
     justify-content: center;
     background-color: ${({ theme }) => theme.blackDark};
-    border: 1px solid red;
+  
   }
 `
 export const StyledWrapper = styled.footer`
@@ -38,10 +38,10 @@ export const StyledWrapper = styled.footer`
 
 export const StyledP = styled.p`
   text-align: center;
-  margin: 10px 5% 0 5%;
-  font-size: ${({ theme }) => theme.font.size.xxs};
+  margin: 0 2%;
+  font-size: ${({ theme }) => theme.font.size.smallS};
   font-family: ${({ theme }) => theme.font.family.inter};
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.3;
   color: ${({ theme }) => theme.white};
 
@@ -52,8 +52,9 @@ export const StyledP = styled.p`
   }
 `
 export const Links = styled(Link)`
+  width: 100%;
+  height: auto;
   font-size: ${({ theme }) => theme.font.size.xs};
-  padding-right: 20px;
   text-decoration: none;
   color: ${({ theme }) => theme.white};
 
@@ -88,22 +89,21 @@ export const Links = styled(Link)`
 
 export const Phone = styled.div`
   width: 80%;
-  max-width: 320px;
+  min-width: 310px;
+  max-width: 330px;
   text-decoration: none;
   height: auto;
   display: grid;
   place-items: center;
   grid-template-columns: 0.9fr 1.1fr;
   position: relative;
-  border: 1px solid red;
-
+  
   p {  
     width: auto;
-    border: 1px solid red;
-    height: 25px;
+    height: 20px;
     font-weight: 400;
     max-width: 200px;
-    font-size: ${({ theme }) => theme.font.size.xm};
+    font-size: ${({ theme }) => theme.font.size.xxm};
     letter-spacing: 0.2em;
 
     &:last-child {

@@ -2,20 +2,33 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, Link, useStaticQuery } from "gatsby"
 
-const StyledWrapper = styled.form`
-  width: 100%;
-  height: calc(100vh - 350px);
-  margin: 0 auto;
+const StyledWrapper = styled.div`
+  width: 100vw;
+  height: auto;
   background-color: ${({ theme }) => theme.black};
   border: 1px solid ${({ theme }) => theme.black};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
+  position: relative;  
+
+  ${({ theme }) => theme.media.desktop} {
+
+    width: 100%;
+    height: calc(100vh - 350px);
+    background-color: ${({ theme }) => theme.black};
+    border: 1px solid ${({ theme }) => theme.black};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  
 `
 
-const StyledTitleSection = styled.div`
+const StyledTitleSection = styled.div` 
   width: 100%;
   height: auto;
   min-height: 250px;
@@ -24,11 +37,21 @@ const StyledTitleSection = styled.div`
   position: relative;
   flex-direction: column;
   color: ${({ theme }) => theme.white};
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    color: ${({ theme }) => theme.white};
+  }
 `
 const StyledTitle = styled.div`
-  width: 200px;
+  width: 100vw;
   height: auto;
-  margin: 20px 0 10px 0;
+  margin: 100px 0 10px 0;
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.gilda};
   font-weight: 400;
@@ -36,6 +59,19 @@ const StyledTitle = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+ 
+  ${({ theme }) => theme.media.desktop} {
+    width: 200px;
+    height: auto;
+    margin: 0 ;
+    color: ${({ theme }) => theme.white};
+    font-family: ${({ theme }) => theme.font.family.gilda};
+    font-weight: 400;
+    color: ${({ theme }) => theme.whiteMax};
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
 `
 const Back = styled.div`
   width: 200px;
@@ -58,7 +94,7 @@ const H1 = styled.p`
   font-family: ${({ theme }) => theme.font.family.gilda};
 `
 
-const StyledDescriptionTitile = styled.p`
+const StyledDescriptionTitle = styled.p`
   width: 80%;
   height: 100px;
   text-align: center;
@@ -70,23 +106,48 @@ const StyledDescriptionTitile = styled.p`
 
 const StyledInner = styled.div`
   width: auto;
-  min-width: 1200px;
-  height: 420px;
+  height: auto;
   margin: 0 auto;
   display: flex;
-  gap: 70px;
+  gap: 20px;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
+
   &::after {
     position: absolute;
     content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 0, 100% 0, 100% 13%, 13% 13%, 13% 100%, 0% 100%);
+    width: 90px;
+    height: 90px;
+    clip-path: polygon(0 0, 100% 0, 100% 8%, 8% 8%, 8% 100%, 0% 100%);
     background-color: ${({ theme }) => theme.orange};
-    left: -60px;
-    top: -60px;
+    left: -30px;
+    top: -30px;
+  }
+
+  ${({ theme }) => theme.media.desktop} {
+    width: auto;
+    min-width: 1200px;
+    height: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 0, 100% 0, 100% 13%, 13% 13%, 13% 100%, 0% 100%);
+      background-color: ${({ theme }) => theme.orange};
+      left: -60px;
+      top: -60px;
+    }
   }
 `
 
@@ -163,10 +224,10 @@ const Estate = () => {
           <Back />
           <H1>Nieruchomości</H1>
         </StyledTitle>
-        <StyledDescriptionTitile>
+        <StyledDescriptionTitle>
           Nieustannie poszukujemy nowych ofert nieruchomości. Wybierz
           nieruchomości, który Cię interesuje.
-        </StyledDescriptionTitile>
+        </StyledDescriptionTitle>
       </StyledTitleSection>
       {HowMany > 0 ? (
         <StyledInner>

@@ -1,36 +1,45 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 import {
   StyledFooter,
   StyledWrapper,
   StyledP,
   Links,
-  Phone,
-} from "./FooterStyled"
+  Phone
+} from "./Footer.styles";
 
 const TopSide = styled.div`
   width: 100%;
-  
+
+${({ theme }) => theme.media.desktop} {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
-  ${({ theme }) => theme.media.desktop} {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-  }
-`
+`;
 
 const StyledNavFooter = styled.ul`
   width: 100%;
   font-family: ${({ theme }) => theme.font.family.inter};
-  margin: 0 0 0 5%;
-
   height: 150px;
-  padding: 20px 10px;
+  padding: 10px 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  place-items: flex-start;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   list-style: none;
-`
+  
+  ${({ theme }) => theme.media.desktop} {
+    width: 100%;
+    font-family: ${({ theme }) => theme.font.family.inter};
+    margin: 0 0 0 5%;
+    height: 150px;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    list-style: none;
+  }
+`;
 
 const Footer = () => {
   return (
@@ -75,7 +84,7 @@ const Footer = () => {
         </StyledP>
       </StyledWrapper>
     </StyledFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

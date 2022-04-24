@@ -62,7 +62,7 @@ const StyledP = styled.p`
     z-index: 2;
     position: absolute;
     margin: 0 auto;
-    top: 270px;
+    top: 280px;
     left: 20%;
     width: 60%;
     height: 230px;

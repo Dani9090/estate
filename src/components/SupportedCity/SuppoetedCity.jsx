@@ -21,7 +21,9 @@ const StyledInner = styled.div`
     width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+
   }
 `
 const StyledTitleWrapper = styled.div`
@@ -36,9 +38,9 @@ const StyledTitleWrapper = styled.div`
     content: "";
     width: 90px;
     height: 90px;
-    clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
+    clip-path: polygon(0 100%,8% 100%, 8% 8%, 100% 8%, 100% 0, 0% 0%);
     background-color: ${({ theme }) => theme.orange};
-    right: 10px;
+    left: 10px;
     top: 10px;
     
   }
@@ -52,12 +54,12 @@ const StyledTitleWrapper = styled.div`
     &::after {
       position: absolute;
       content: "";
-      width: 90px;
-      height: 90px;
-      clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 100%,12% 100%, 12% 12%, 100% 12%, 100% 0, 0% 0%);
       background-color: ${({ theme }) => theme.orange};
-      right: 10px;
-      top: 10px;
+      left: 30px;
+      top: 30px;
     }
   }
   
@@ -109,7 +111,20 @@ const H1 = styled.p`
 
   }
   ${({ theme }) => theme.media.desktop} {  
-    font-size: ${({ theme }) => theme.font.size.xxl};   
+    font-size: ${({ theme }) => theme.font.size.xxl};
+    &::before {
+      z-index: -1;
+      position: absolute;
+      content: '';
+      width: 50%;
+      min-width: 100px;
+      height: calc(${({ theme }) => theme.font.size.xxl} * 1.4);
+      background-color: ${({ theme }) => theme.orange};
+      border-radius: 2px;
+      right: -15%;
+      top: calc(-${({ theme }) => theme.font.size.xxl} / 8);
+
+    }
   }
 `
 
@@ -236,9 +251,9 @@ const Bottom = styled.div`
     content: "";
     width: 90px;
     height: 90px;
-    clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 100%, 0 92%, 92% 92%, 92% 0, 100% 0, 100% 100%);
     background-color: ${({ theme }) => theme.orange};
-    left: 10px;
+    right: 10px;
     bottom: 10px;
   }
   ${({ theme }) => theme.media.desktop} {
@@ -249,12 +264,12 @@ const Bottom = styled.div`
     &::after {
       position: absolute;
       content: "";
-      width: 90px;
-      height: 90px;
-      clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 100%, 0 88%, 88% 88%, 88% 0, 100% 0, 100% 100%);
       background-color: ${({ theme }) => theme.orange};
-      left: 10px;
-      bottom: 10px;
+      right: 30px;
+      bottom: 30px;
     }
   }
 `

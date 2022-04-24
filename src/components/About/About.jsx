@@ -8,8 +8,7 @@ const StyledWrapper = styled.div`
     margin-top: 0;
     border: 1px solid ${({ theme }) => theme.black};
     background-color: ${({ theme }) => theme.black};
-    position: relative;
- 
+    position: relative; 
 
     p {
       height: 50px;
@@ -20,49 +19,28 @@ const StyledWrapper = styled.div`
       text-align: center;
       font-family: ${({ theme }) => theme.font.family.montserrat};
       font-size: ${({ theme }) => theme.font.size.xxs};
-      
-  ${({ theme }) => theme.media.desktop} {
-    width: 100%;
-    height: auto;
-    border: 1px solid ${({ theme }) => theme.black};
-    background-color: ${({ theme }) => theme.black};
-    position: relative;
-    margin-top: 50px;
-
-    p {
-      height: 50px;
-      width: 80%;
-      padding: 5px;
-      margin: 0 auto;
-      color: ${({ theme }) => theme.white};
-      text-align: center;
-      font-family: ${({ theme }) => theme.font.family.montserrat};
-      font-size: ${({ theme }) => theme.font.size.xxs};
-
-     /* &::after {
-        position: absolute;
-        content: "";
-        width: 100px;
-        height: 100px;
-        clip-path: polygon(0 0, 13% 0, 13% 87%, 100% 87%, 100% 100%, 0% 100%);
-        background-color: ${({ theme }) => theme.darkOrange};
-        left: 30px;
-        bottom: 30px;
-      }
     }
 
-    &::after {
-      position: absolute;
-      content: "";
-      width: 100px;
-      height: 100px;
-      clip-path: polygon(0 13%, 0 0, 100% 0, 100% 100%, 87% 100%, 87% 13%);
-      background-color: ${({ theme }) => theme.darkOrange};
-      right: 30px;
-      top: 50px;
-    }*/
-  }
+      ${({ theme }) => theme.media.desktop} {
+        margin-top: 71px;       
+        width: 100%;
+        height: auto;
+        background-color: ${({ theme }) => theme.black};
+        position: relative;
+      
+        p {
+          height: 50px;
+          width: 80%;
+          padding: 5px;
+          margin: 0 auto;
+          color: ${({ theme }) => theme.white};
+          text-align: center;
+          font-family: ${({ theme }) => theme.font.family.montserrat};
+          font-size: ${({ theme }) => theme.font.size.xxs};
+        }
+      }
 `
+
 const StyledInner = styled.div`
   width:100%;
   margin: 0 auto;
@@ -73,8 +51,8 @@ const StyledInner = styled.div`
   padding-bottom: 20px;
  
   ${({ theme }) => theme.media.desktop} {
-    width: 90%;
-    max-width: 90%;
+     width: 80%;
+    max-width: 1840px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -98,20 +76,31 @@ const StyledTitle = styled.h1`
   &::after {
     position: absolute;
     content: "";
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
     background-color: ${({ theme }) => theme.darkOrange};
     right: 10px;
     top: 0;
   }
   ${({ theme }) => theme.media.desktop} {
-    height: 120px;
-    padding: 60px 0;
+    height: 130px;
+    padding: 50px 0;
     color: ${({ theme }) => theme.white};
     text-align: center;
     font-family: ${({ theme }) => theme.font.family.gilda};
+    font-size: ${({theme}) => theme.font.size.m};
     font-weight: 400;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 12%, 0 0, 100% 0, 100% 100%, 88% 100%, 88% 12%);
+      background-color: ${({ theme }) => theme.darkOrange};
+      right: 30px;
+      top: 30px;
+    }
   };
 `
 
@@ -143,6 +132,16 @@ const StyledBottomDes = styled.div`
 
     p {
       height: 30px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 100px;
+      clip-path: polygon(0 0, 12% 0, 12% 88%, 100% 88%, 100% 100%, 0% 100%);
+      background-color: ${({ theme }) => theme.darkOrange};
+      left: 30px;
+      bottom: 30px;
     }
   }
 `

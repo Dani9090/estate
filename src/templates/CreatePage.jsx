@@ -9,14 +9,15 @@ import {
   IMG,
   StyledSectionTitle,
   StyledTitle,
-  Back,
   StyledDetails,
   StyledContact,
   StyledImgContact,
   StyledDescriptionContact,
   StyledCarousel,
   Carousels,
-} from "./CreatePages.Styles"
+  H2,
+  Div
+} from "./CreatePages.styles"
 
 export default function BlogPost({ data }) {
   const estate = data.allDatoCmsEstate.nodes
@@ -35,10 +36,11 @@ export default function BlogPost({ data }) {
             </Carousels>
           </StyledCarousel>
           <StyledSectionTitle>
+            <Div>
             <h4>{post.titleestate}</h4>
-            <StyledTitle>
-              <Back />
-              <h2>{post.descriptionestate}</h2>
+            </Div>
+              <StyledTitle>
+              <H2>{post.descriptionestate}</H2>
             </StyledTitle>
             <p>{post.descriptionpage}</p>
           </StyledSectionTitle>
@@ -64,7 +66,7 @@ export default function BlogPost({ data }) {
           <StyledContact>
             <StyledImgContact src={post.imgcontact.url} alt="contact" />
             <StyledDescriptionContact>
-              <h3>Kontakt</h3>
+              <h3>Kontakt:</h3>
               <p>{post.namecontact}</p>
               <p>
                 <a href={`mailto:${post.emailcontact}`}>{post.emailcontact}</a>

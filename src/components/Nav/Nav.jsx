@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {useLocation} from "@reach/router"
 import styled, {css} from "styled-components"
 import {Link} from "gatsby"
- import Hamburger from 'components/Hamburger/Hamburger';
+import Hamburger from "src/components/Hamburger/Hamburger";
 import MobileMenu from "src/components/MobileMenu/MobileMenu"
 
 const StyledHeader = styled.header`
@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
   height: 60px;
   z-index: 999;
   background: transparent;
+    
   ::after {
     content: "";
     position: absolute;
@@ -29,6 +30,7 @@ const StyledHeader = styled.header`
 ;
 
   ${({theme}) => theme.media.desktop} {
+      width: auto;
     position: absolute;
     top: 10px;
     height: 60px;
@@ -80,7 +82,7 @@ const StyledNav = styled.nav`
     justify-content: flex-end;
     align-items: center;
     font-family: ${({theme}) => theme.font.family.gilda};
-  
+ 
   }
 `
 
@@ -237,7 +239,7 @@ const Nav = () => {
                             <Links
                                 notmain={manpage}
                                 activeClassName="active"
-                                to="/procedura/"
+                                to="/#procedura"
                             >
                                 Procedura
                             </Links>
@@ -257,7 +259,7 @@ const Nav = () => {
                             </Links>
                         </Li>
                         <Li>
-                            <Links notmain={manpage} activeClassName="active" to="/sklep/">
+                            <Links notmain={manpage} activeClassName="active" to="/#obslugiwaneMiasta">
                                 Obsługiwane Miasta
                             </Links>
                         </Li>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
@@ -32,37 +32,27 @@ const MenuLinkWraper = styled.ul`
 const MenuLink = styled.li`
   margin: 20px 0;
   list-style: none;
-  font-family: ${({ theme }) => theme.font.family.Lobster};
+  font-family: ${({ theme }) => theme.font.family.montserrat};
   font-size: ${({ theme }) => theme.font.size.s};
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
   transition: opacity 0.25s 0.25s ease-in-out;
   text-decoration: none;
-  list-style-type: none;
   border: none;
   background-color: transparent;
 `;
 
-const StyledOffertMenu = styled.ul`
+const StyledHome=styled.div`
   width: 100%;
-  height: ${({ isOffertOpen }) => (isOffertOpen ? "auto" : "0")};
-  list-style: none;
-  font-family: ${({ theme }) => theme.font.family.montserrat};
-  font-size: ${({ theme }) => theme.font.size.s};
-  opacity: ${({ isOffertOpen }) => (isOffertOpen ? "1" : "1")};
-  transform: translateX(
-    ${({ isOffertOpen }) => (isOffertOpen ? "-0%" : "-300%")}
-  );
-  transition: all 0.3s 0.1s ease-in-out;
-  list-style-type: none;
-  border-bottom: ${({ isOffertOpen }) =>
-    isOffertOpen ? "3px solid white" : "none"};
-  border-top: ${({ isOffertOpen }) =>
-    isOffertOpen ? "2px solid white" : "none"};
-  padding-left: 0%;
-  position: relative;
-`
-const Links = styled(Link)`
-  font-size: ${({ theme }) => theme.font.size.s};
+  height: 100px;
+  margin-bottom: 40px;
+  font-family: ${({ theme }) => theme.font.family.cormorant};
+  font-size: ${({ theme }) => theme.font.size.xl};
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+ `
+const Links = styled(({isBig, ...props}) => <Link {...props} />)`
+  font-size: ${({ theme, isBig }) => isBig ?  theme.font.size.l : theme.font.size.s};
 
   text-decoration: none;
   color: ${({ theme }) => theme.black};
@@ -76,7 +66,9 @@ const MobileMenu = ({ isOpen, setMenuState }) => {
   return (
     <StyledWrapper onClick={toogleMobileMenu} isOpen={isOpen}>
 
-      <Links onClick={toogleMobileMenu} to="/">Z-lokatorem</Links>
+<StyledHome>
+      <Links isBig onClick={toogleMobileMenu} to="/">Z-lokatorem</Links>
+</StyledHome>
       <MenuLinkWraper>
 
         <MenuLink isOpen={isOpen}>
@@ -101,6 +93,7 @@ const MobileMenu = ({ isOpen, setMenuState }) => {
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
+  setMenuState:PropTypes.bool,
 }
 
 MobileMenu.defaultProps = {

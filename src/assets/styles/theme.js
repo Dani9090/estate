@@ -22,6 +22,7 @@ export const theme = {
   },
   font: {
     size: {
+      smallS: "1.0rem",
       xxs: "1.3rem",
       xs: "1.6rem",
       s: "1.8rem",
@@ -53,6 +54,7 @@ export const theme = {
     desktop: "@media (min-width: 1024px)",
     bigDesktop: "@media (min-width: 1280px)",
     large: "@media (min-width: 1545px)",
+    own: "@media (min-width: 1655px)"
   },
   mq: {
     tablet: "@media (min-width: 768px)",
