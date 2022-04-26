@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Carousel } from "react-responsive-carousel"
 
+
 export const StyledWrapper = styled.div`
   width: 100%;
   display: grid;
@@ -36,7 +37,7 @@ export const StyledInner = styled.div`
     "four four";
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
-    border: 1px solid red;
+
   }
 `
 export const StyledImg = styled.div`
@@ -45,31 +46,35 @@ export const StyledImg = styled.div`
   margin: 0;
   display: grid;
   place-items: center;
+  
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
   ${({ theme }) => theme.media.desktop} {
     width: auto;
     display: grid;
     place-items: center;
+    img{
+      width: auto;
+      height: auto;
+      max-height: 570px;
+      object-fit: cover;
+    }
+
   }
 `
-export const IMG = styled.img`
-  width: 100%;
-  height: auto;  
-  object-fit: cover;
-  ${({ theme }) => theme.media.desktop} {
-    width: auto;
-    height: auto;
-    max-height: 570px;
-    object-fit: cover;
-  }
-`
+
 export const StyledSectionTitle = styled.div`
   width: 90%;
-  margin: 0 auto;
+ 
   grid-area: two;
   line-height: 1.5;
   display: grid;
   place-items: center;
+  margin-top: 30px;
 
   h4 {
     width: auto;
@@ -152,7 +157,7 @@ export const H2=styled.div`
   color: ${({ theme }) => theme.whiteMax};
   position: relative;
   font-size: ${({ theme }) => theme.font.size.m};
-  border: 1px solid green;
+
   &::before {
     z-index: -1;
     position: absolute;
@@ -315,6 +320,7 @@ export const StyledCarousel = styled.div`
 `
 export const Carousels = styled(Carousel)`
   width: 80%;
+  
 `
 export const Div = styled.div`
   width: 80%;

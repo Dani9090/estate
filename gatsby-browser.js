@@ -1,6 +1,6 @@
 const React = require("react")
-const { MainTemplate } = require("./src/templates/MainTemplate")
+import MainTemplate from "./src/templates/MainTemplate"
 
-exports.wrapPageElement = ({ element, props }) => (
-  <MainTemplate {...props}>{element}</MainTemplate>
-)
+export function wrapPageElement({ element, props }) {
+  return <MainTemplate {...props}>{element}</MainTemplate>;
+}

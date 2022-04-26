@@ -1,6 +1,5 @@
 const path = require("path")
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -66,7 +65,7 @@ module.exports = {
           'gilda display\:400',
           'inter\:300,500,700',
         ],
-        display: "swap",
+
       },
     },
   ],

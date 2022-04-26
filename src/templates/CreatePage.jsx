@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql} from "gatsby"
-import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import {
   StyledWrapper,
@@ -17,23 +17,26 @@ import {
   Carousels,
   H2,
   Div
-} from "./CreatePages.styles"
+} from "./CreatePages.styles";
 
-export default function BlogPost({ data }) {
+export default function BlogPost({ data, pageContext }) {
+  if(!data) return null
   const estate = data.allDatoCmsEstate.nodes
-
+  {console.log(pageContext.foto)}
   return (
     <StyledWrapper>
       {estate.map(post => (
         <StyledInner key={post.id}>
           <StyledCarousel>
-            <Carousels>
-              {post.galeryestate.map(foto => (
-                <StyledImg key={foto.url}>
-                  <IMG src={foto.url} alt="foto" />
-                </StyledImg>
-              ))}
-            </Carousels>
+<Carousels>
+
+            {post.galeryestate.map((url) =>(
+              <StyledImg key={url.index}>
+              <img src={url.url} alt={url.alt} />
+              </StyledImg>
+                         ))}
+</Carousels>
+
           </StyledCarousel>
           <StyledSectionTitle>
             <Div>
@@ -102,6 +105,8 @@ export const query = graphql`
         }
         galeryestate {
           url
+           alt
+        title
         }
       }
     }
