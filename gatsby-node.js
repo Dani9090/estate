@@ -1,3 +1,4 @@
+/*
 const path = require("path");
 
 async function turnTraditionalIntoPages({ graphql, actions }) {
@@ -15,7 +16,7 @@ async function turnTraditionalIntoPages({ graphql, actions }) {
             alt
             title
           }
-           
+
         }
     }
 }
@@ -40,8 +41,8 @@ export async function createPages(params) {
   await Promise.all([turnTraditionalIntoPages(params)]);
 }
 
+*/
 
-/*
 
 exports.createPages = async function({ actions, graphql }) {
   const { data } = await graphql(`
@@ -72,5 +73,5 @@ exports.createPages = async function({ actions, graphql }) {
       }
     });
   });
-};*/
+};
 

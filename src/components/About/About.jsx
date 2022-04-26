@@ -73,6 +73,7 @@ const StyledTitle = styled.h1`
   display: grid;
   place-items: center;
   position: relative;
+  line-height: 1.4;
   &::after {
     position: absolute;
     content: "";

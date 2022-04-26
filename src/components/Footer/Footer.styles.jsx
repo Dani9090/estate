@@ -88,14 +88,14 @@ export const Links = styled(Link)`
 `
 
 export const Phone = styled.div`
-  width: 80%;
-  min-width: 310px;
-  max-width: 330px;
+  width: 90%;
+  min-width: 300px;
+  max-width: 360px;
   text-decoration: none;
   height: auto;
   display: grid;
   place-items: center;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   position: relative;
   
   p {  
@@ -107,7 +107,6 @@ export const Phone = styled.div`
     letter-spacing: 0.2em;
 
     &:last-child {
-
      font-size: ${({ theme }) => theme.font.size.xm};
       color: ${({ theme }) => theme.honey};
     }

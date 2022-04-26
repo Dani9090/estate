@@ -3,21 +3,21 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 const StyledHero = styled.div`
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
-    position: relative;
+   position: relative;
     height: 679px;
   }
 `
 
 const StyleIMG = styled.div`
   display: block;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: 0;
 
@@ -31,10 +31,10 @@ const StyleIMG = styled.div`
 `
 
 const IMG = styled.img`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   object-fit: cover;
-  object-position: 50% 10%;
+  object-position: 50% 50%;
 
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
@@ -47,17 +47,17 @@ const StyledP = styled.p`
   z-index: 2;
   position: absolute;
   margin: 0 auto;
-  top: 30vh;
-  left: 15%;
-  width: 70%;
-  height: 230px;
+  top: 25vh;
+  left: 12%;
+  width: 76%;
+  height: auto;
   color: ${({theme}) => theme.white};
   font-family: ${({theme}) => theme.font.family.gilda};
   font-size: ${({theme}) => theme.font.size.xm};
-  line-height: 2;
+  line-height: 1.8;
   text-align: center;
   letter-spacing: 0.1rem;
-  
+   
   ${({ theme }) => theme.media.desktop} {
     z-index: 2;
     position: absolute;
