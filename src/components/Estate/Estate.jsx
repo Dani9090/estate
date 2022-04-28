@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
   ${({ theme }) => theme.media.desktop} {
 
     width: 100%;
-    height: calc(100vh - 350px);
+    height: auto;
     background-color: ${({ theme }) => theme.black};
     border: 1px solid ${({ theme }) => theme.black};
     display: flex;
@@ -24,8 +24,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     position: relative;
-  }
-  
+  }  
 `
 
 const StyledTitleSection = styled.div` 
@@ -40,6 +39,7 @@ const StyledTitleSection = styled.div`
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
     height: auto;
+    margin-top: 10px;
     min-height: 250px;
     display: flex;
     align-items: center;
@@ -58,8 +58,7 @@ const StyledTitle = styled.div`
   color: ${({ theme }) => theme.whiteMax};
   display: flex;
   justify-content: center;
-  position: relative;
- 
+  position: relative; 
   ${({ theme }) => theme.media.desktop} {
     width: 200px;
     height: auto;
@@ -82,6 +81,10 @@ const Back = styled.div`
   top: 0;
   border-radius: 2px;
   z-index: 1;
+  ${({ theme }) => theme.media.desktop} {
+    z-index: 999;
+
+  }
 `
 const H1 = styled.p`
   margin: 0;
@@ -92,6 +95,11 @@ const H1 = styled.p`
   z-index: 99;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.gilda};
+  ${({ theme }) => theme.media.desktop} {
+    z-index: 999;
+    
+  }
+  
 `
 
 const StyledDescriptionTitle = styled.p`

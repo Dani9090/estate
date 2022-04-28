@@ -6,7 +6,6 @@ import {
   StyledWrapper,
   StyledInner,
   StyledImg,
-  IMG,
   StyledSectionTitle,
   StyledTitle,
   StyledDetails,
@@ -19,10 +18,8 @@ import {
   Div
 } from "./CreatePages.styles";
 
-export default function BlogPost({ data, pageContext }) {
-  if(!data) return null
+export default function BlogPost({ data }) {
   const estate = data.allDatoCmsEstate.nodes
-  {console.log(pageContext.foto)}
   return (
     <StyledWrapper>
       {estate.map(post => (
@@ -31,7 +28,7 @@ export default function BlogPost({ data, pageContext }) {
 <Carousels>
 
             {post.galeryestate.map((url) =>(
-              <StyledImg key={url.index}>
+              <StyledImg key={url.alt}>
               <img src={url.url} alt={url.alt} />
               </StyledImg>
                          ))}

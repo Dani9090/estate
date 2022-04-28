@@ -95,6 +95,7 @@ export const StyledSectionTitle = styled.div`
   ${({ theme }) => theme.media.desktop} {
     width: 80%;
     margin-left: 20%;
+    margin-top: 6vh;
     grid-area: two;
     line-height: 1.5;
 
@@ -111,9 +112,11 @@ export const StyledSectionTitle = styled.div`
     p {
       padding: 10px 0;
       font-weight: 300;
-      width: 50%;
+      width: 90%;
     }
   }
+ 
+  
 `
 export const StyledTitle = styled.div`
   width: 100%;
@@ -125,28 +128,17 @@ export const StyledTitle = styled.div`
   font-weight: 400;
   position: relative;
   z-index: 9;
-
-  h2 {
-    z-index: 9;
-    font-weight: 400;
-    color: ${({ theme }) => theme.whiteMax};
-  }
+  
   ${({ theme }) => theme.media.desktop} {
-    width: auto;
     height: auto;
-    margin-left: 4%;
+    margin-left: 10%;
     color: ${({ theme }) => theme.white};
     font-size: ${({ theme }) => theme.font.size.xm};
     font-family: ${({ theme }) => theme.font.family.gilda};
     font-weight: 400;
     position: relative;
     z-index: 9;
-
-    h2 {
-      z-index: 9;
-      font-weight: 400;
-      color: ${({ theme }) => theme.whiteMax};
-    }
+    
   }
 `
 
@@ -171,7 +163,7 @@ export const H2=styled.div`
     top: calc(${({ theme }) => theme.font.size.xm} / 10);
   }
   ${({ theme }) => theme.media.desktop} {
-   z-index: 9;
+  z-index: 9;
   font-weight: 400;
   color: ${({ theme }) => theme.whiteMax};
   position: relative;
@@ -181,13 +173,13 @@ export const H2=styled.div`
     z-index: -1;
     position: absolute;
     content: '';
-    width: 100%;
+    width: calc(${({ theme }) => theme.font.size.m} * 6);
     min-width: 100px;
-    height: calc(${({ theme }) => theme.font.size.xm} * 2);
+    height: calc(${({ theme }) => theme.font.size.m} * 1.5);
     background-color: ${({ theme }) => theme.orange};
     border-radius: 2px;
-    left: -55%;
-    top: calc(${({ theme }) => theme.font.size.xm} / 10);
+    left: calc(-${({ theme }) => theme.font.size.m} * 1.5);
+    top: calc(${({ theme }) => theme.font.size.m} / 11);
   }
   }
 `
@@ -225,8 +217,9 @@ export const StyledDetails = styled.div`
     width: 90%;
     margin-left: 10%;
     grid-area: three;
+    align-items: flex-end;
     padding: 5px 30px;
-
+    
     h4 {
       padding: 30px 0 10px 0;
       margin: 0;
@@ -248,6 +241,10 @@ export const StyledDetails = styled.div`
       height: auto;
       padding: 15px 0;
       display: flex;
+      
+      &:last-child{
+        padding-bottom: 0;
+      }
     }
   }
 `
