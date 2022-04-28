@@ -89,8 +89,8 @@ export const Links = styled(Link)`
 
 export const Phone = styled.div`
   width: 90%;
-  min-width: 300px;
-  max-width: 360px;
+  min-width: 305px;
+  max-width: 340px;
   text-decoration: none;
   height: auto;
   display: grid;

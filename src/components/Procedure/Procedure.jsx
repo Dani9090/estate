@@ -29,12 +29,12 @@ const StyledWrapper = styled.div`
     &::after {
       position: absolute;
       content: "";
-      width: 90px;
-      height: 90px;
-      clip-path: polygon(0 92%, 0 100%, 100% 100%, 100% 0, 92% 0, 92% 92%);
+      width: 80px;
+      height: 80px;
+      clip-path: polygon(0 88%, 0 100%, 100% 100%, 100% 0, 88% 0, 88% 88%);
       background-color: ${({ theme }) => theme.black};
-      right: 10px;
-      bottom: 10px;
+      right: 15px;
+      bottom: 15px;
       
     }
   
@@ -81,7 +81,7 @@ const StyledInner = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
-  padding: 20px 0 70px 0;
+  padding: 0px 0 70px 0;
 
   div {
     display: grid;
@@ -162,12 +162,12 @@ const StyledTitle = styled.div`
   &::after {
     position: absolute;
     content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 0, 100% 0, 100% 8%, 8% 8%, 8% 100%, 0% 100%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 0, 100% 0, 100% 12%, 12% 12%, 12% 100%, 0% 100%);
     background-color: ${({ theme }) => theme.black};
-    left: 10px;
-    top: 10px;
+    left: 15px;
+    top: 15px;
   }
   ${({theme}) => theme.media.desktop} {
     height: 120px;
@@ -223,6 +223,7 @@ const H1 = styled.h1`
   position: relative;
   font-family: ${({ theme }) => theme.font.family.gilda};
   font-size: ${({ theme }) => theme.font.size.m};
+  margin-top: 30px;
 
   &::before {
     z-index: -1;

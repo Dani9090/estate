@@ -15,12 +15,12 @@ export const StyledWrapper = styled.form`
   &::after {
     position: absolute;
     content: "";
-    width: 90px;
-    height: 90px;
-    clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 0, 12% 0, 12% 88%, 100% 88%, 100% 100%, 0% 100%);
     background-color: ${({ theme }) => theme.orange};
-    left: 10px;
-    bottom: 10px;
+    left: 15px;
+    bottom: 15px;
   }
 ;
   ${({ theme }) => theme.media.desktop} {
@@ -384,12 +384,12 @@ export const StyledTitleSection = styled.div`
   &::after {
     position: absolute;
     content: "";
-    width: 90px;
-    height: 90px;
-    clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 12%, 0 0, 100% 0, 100% 100%, 88% 100%, 88% 12%);
     background-color: ${({ theme }) => theme.orange};
-    right: 10px;
-    top: 10px;
+    right: 15px;
+    top: 15px;
   }
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
@@ -414,7 +414,7 @@ export const StyledTitleSection = styled.div`
 export const StyledTitle = styled.div`
   width: 200px;
   height: auto;
-  margin: 50px 0 10px 0;
+  margin: 55px 0 10px 0;
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.gilda};
   font-weight: 400;

@@ -5,7 +5,7 @@ function generateOrderEmail({data}){
 <h3>Dane zgloszenia</h3>
 <p>Email: ${data.Email}</p>
 <p>Numer księgi: ${data.Book}</p>
-<p>RodzajNieruchomosci: ${data.RodzajNieruchomosci}</p>
+<p>Rodzaj nieruchomosci: ${data.EstateType}</p>
 <p>Cena: ${data.Price}</p>
 <p>Numer telefonu: ${data.MobileNumber}</p>
 <p>Adres: ${data.Adres}</p>

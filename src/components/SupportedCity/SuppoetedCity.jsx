@@ -18,12 +18,24 @@ const StyledInner = styled.div`
   flex-direction: column;
   justify-content: center;
   ${({ theme }) => theme.media.desktop} {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+  }
+  ${({ theme }) => theme.media.bigDesktop} {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
 
+  }
+  ${({ theme }) => theme.media.large} {
+    width: 80%;
   }
 `
 const StyledTitleWrapper = styled.div`
@@ -36,12 +48,12 @@ const StyledTitleWrapper = styled.div`
   &::after {
     position: absolute;
     content: "";
-    width: 90px;
-    height: 90px;
-    clip-path: polygon(0 100%,8% 100%, 8% 8%, 100% 8%, 100% 0, 0% 0%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 100%,12% 100%, 12% 12%, 100% 12%, 100% 0, 0% 0%);
     background-color: ${({ theme }) => theme.orange};
-    left: 10px;
-    top: 10px;
+    left: 15px;
+    top: 15px;
     
   }
   ${({ theme }) => theme.media.desktop} {
@@ -134,7 +146,7 @@ const StyledLeftSide = styled.div`
   justify-content: center;
   position: relative;
   ${({ theme }) => theme.media.desktop} {
-    width: 50%;
+    width: 50vw;
     display: flex;
     justify-content: center;
     position: relative;
@@ -162,6 +174,29 @@ const StyledRightSide = styled.div`
   }
   
   ${({ theme }) => theme.media.desktop} {
+    width:80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      width: 80%;
+      color: ${({ theme }) => theme.white};
+      text-align: center;
+      margin: 0;
+      padding: 30px 0;
+      color: ${({ theme }) => theme.white};
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      font-weight: 500;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
+  ${({ theme }) => theme.media.bigDesktop} {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -182,6 +217,7 @@ const StyledRightSide = styled.div`
         padding-top: 0;
       }
     }
+    
   }
 `
 const StyledH5 = styled.p`
@@ -206,7 +242,7 @@ const StyledUL = styled.div`
   width: 100%;
   padding-left: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.montserrat};
   font-weight: 500;
@@ -216,11 +252,15 @@ const StyledUL = styled.div`
     width: auto;
     list-style-position: inside;
   }
-  ${({ theme }) => theme.media.desktop} {
-    
-    width: 80%;
+  ${({ theme }) => theme.media.tablet} {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+    ${({ theme }) => theme.media.desktop} {   
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     color: ${({ theme }) => theme.white};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 500;
@@ -231,14 +271,33 @@ const StyledUL = styled.div`
       list-style-position: inside;
     }
   }
+  ${({ theme }) => theme.media.bigDesktop} {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    color: ${({ theme }) => theme.white};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
+    font-weight: 500;
+    text-align: center;
+    
+    li {
+      width: auto;
+      list-style-position: inside;
+    }
+    
+  }
 `
 const IMG = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
   ${({ theme }) => theme.media.desktop} {
-    width: 600px;
-    height: 600px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    height: auto;
+    
   }
 `
 const Bottom = styled.div`
@@ -249,12 +308,12 @@ const Bottom = styled.div`
   &::after {
     position: absolute;
     content: "";
-    width: 90px;
-    height: 90px;
-    clip-path: polygon(0 100%, 0 92%, 92% 92%, 92% 0, 100% 0, 100% 100%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 100%, 0 88%, 88% 88%, 88% 0, 100% 0, 100% 100%);
     background-color: ${({ theme }) => theme.orange};
-    right: 10px;
-    bottom: 10px;
+    right: 15px;
+    bottom: 15px;
   }
   ${({ theme }) => theme.media.desktop} {
     width: 100%;

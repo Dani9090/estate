@@ -89,7 +89,7 @@ const H1 = styled.p`
   color: white;
   font-weight: 500;
   font-size: ${({ theme }) => theme.font.size.xxl};
-  z-index: 999;
+  z-index: 99;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.gilda};
 `

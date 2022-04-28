@@ -42,12 +42,13 @@ const StyledWrapper = styled.div`
 `
 
 const StyledInner = styled.div`
-  width:100%;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:10px;
+  gap: 10px;
   place-items: center;
+  padding-top: 10px;
   padding-bottom: 20px;
  
   ${({ theme }) => theme.media.desktop} {
@@ -63,8 +64,10 @@ const StyledInner = styled.div`
 `
 
 const StyledTitle = styled.h1`
+  width: 100vw;
   height: 120px;
-  padding: 20px;
+  padding: 25px 40px 30px 20px;
+  margin: 30px 0;
   color: ${({ theme }) => theme.white};
   text-align: center;
   font-family: ${({ theme }) => theme.font.family.gilda};
@@ -77,12 +80,12 @@ const StyledTitle = styled.h1`
   &::after {
     position: absolute;
     content: "";
-    width: 90px;
-    height: 90px;
-    clip-path: polygon(0 8%, 0 0, 100% 0, 100% 100%, 92% 100%, 92% 8%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 12%, 0 0, 100% 0, 100% 100%, 88% 100%, 88% 12%);
     background-color: ${({ theme }) => theme.darkOrange};
-    right: 10px;
-    top: 0;
+    right: 15px;
+    top: -5px;
   }
   ${({ theme }) => theme.media.desktop} {
     height: 130px;
@@ -108,22 +111,22 @@ const StyledTitle = styled.h1`
 const StyledBottomDes = styled.div`
   width: 100%;
   height: auto;
-  padding-bottom: 40px;
+  padding-bottom: 45px;
   p {
     width: 100%;
     height: auto;
   line-height: 1.5;
-    padding-bottom: 5px
+   padding: 2px 12px;
   }
   &::after {
     position: absolute;
     content: "";
-    width: 100px;
-    height: 100px;
-    clip-path: polygon(0 0, 8% 0, 8% 92%, 100% 92%, 100% 100%, 0% 100%);
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(0 0, 12% 0, 12% 88%, 100% 88%, 100% 100%, 0% 100%);
     background-color: ${({ theme }) => theme.darkOrange};
-    left: 10px;
-    bottom: 10px;
+    left: 15px;
+    bottom: 15px;
   }
   
   ${({theme}) => theme.media.desktop} {

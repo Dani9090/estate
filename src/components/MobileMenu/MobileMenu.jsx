@@ -7,7 +7,8 @@ const StyledWrapper = styled.div`
   position: fixed;
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
+  overflow: hidden !important;
+ 
   background-color: ${({ theme }) => theme.white};
   display: flex;
   align-items: center;
@@ -15,12 +16,12 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   left: 0;
   top:0;
-  z-index: 9998;
+  z-index: 9999;
   transform: translateX(${({ isOpen }) => (isOpen ? "0%" : "-100%")});
   transition: transform 0.25s ease-in-out;
 `
 
-const MenuLinkWraper = styled.ul`
+const MenuLinkWrapper = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
@@ -62,6 +63,7 @@ const Links = styled(({isBig, ...props}) => <Link {...props} />)`
 const MobileMenu = ({ isOpen, setMenuState }) => {
   const toogleMobileMenu = () => {
     setMenuState(false)
+    document.body.style.overflowY = 'hidden';
   }
   return (
     <StyledWrapper onClick={toogleMobileMenu} isOpen={isOpen}>
@@ -69,7 +71,7 @@ const MobileMenu = ({ isOpen, setMenuState }) => {
 <StyledHome>
       <Links isBig onClick={toogleMobileMenu} to="/">Z-lokatorem</Links>
 </StyledHome>
-      <MenuLinkWraper>
+      <MenuLinkWrapper>
 
         <MenuLink isOpen={isOpen}>
           <Links onClick={toogleMobileMenu} to="/#onas" >O nas </Links>
@@ -86,18 +88,20 @@ const MobileMenu = ({ isOpen, setMenuState }) => {
         <MenuLink isOpen={isOpen}>
           <Links to="/#obslugiwaneMiasta">Obsługiwane Miasta</Links>
         </MenuLink>
-      </MenuLinkWraper>
+      </MenuLinkWrapper>
     </StyledWrapper>
   )
 }
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
-  setMenuState:PropTypes.bool,
+  isBig: PropTypes.bool,
+  setMenuState:PropTypes.func,
 }
 
 MobileMenu.defaultProps = {
   isOpen: false,
+  isBig: false,
 }
 
 export default MobileMenu
