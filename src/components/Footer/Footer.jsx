@@ -59,16 +59,16 @@ const Footer = () => {
               <Links to="/#onas">O nas</Links>
             </li>
             <li>
-              <Links to="/procedura/">Procedura</Links>
+              <Links to="/#procedura">Procedura</Links>
             </li>
             <li>
               <Links to="/nieruchomosci/">Nieruchomości</Links>
             </li>
             <li>
-              <Links to="/sklep/">Kontakt</Links>
+              <Links to="/#kontakt">Kontakt</Links>
             </li>
             <li>
-              <Links to="/sklep/">Obsługiwane Miasta</Links>
+              <Links to="/#obslugiwaneMiasta">Obsługiwane Miasta</Links>
             </li>
           </StyledNavFooter>
         </TopSide>

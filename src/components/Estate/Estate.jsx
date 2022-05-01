@@ -14,9 +14,9 @@ const StyledWrapper = styled.div`
   position: relative;  
 
   ${({ theme }) => theme.media.desktop} {
-
+border: 1px solid red;
     width: 100%;
-    height: auto;
+    height: calc(100vh - 385px);
     background-color: ${({ theme }) => theme.black};
     border: 1px solid ${({ theme }) => theme.black};
     display: flex;
@@ -39,7 +39,6 @@ const StyledTitleSection = styled.div`
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
     height: auto;
-    margin-top: 10px;
     min-height: 250px;
     display: flex;
     align-items: center;

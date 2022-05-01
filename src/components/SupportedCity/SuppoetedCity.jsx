@@ -280,7 +280,7 @@ const StyledUL = styled.div`
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 500;
     text-align: center;
-    
+    border: 1px solid red;
     li {
       width: auto;
       list-style-position: inside;

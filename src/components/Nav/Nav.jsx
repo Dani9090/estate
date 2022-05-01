@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
   height: 60px;
   z-index: 999;
   background: transparent;
-    
+
   ::after {
     content: "";
     position: absolute;
@@ -58,11 +58,12 @@ const StyledInner = styled.div`
   height: auto;
   margin: 0 auto;
   display: flex;
-
+    overflow: hidden;
   ${({theme}) => theme.media.desktop} {
     width: 99vw;
     display: grid;
     grid-template-columns: 0.7fr 1.3fr;
+
   }
 `
 const StyledNav = styled.nav`

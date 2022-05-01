@@ -63,7 +63,7 @@ const Links = styled(({isBig, ...props}) => <Link {...props} />)`
 const MobileMenu = ({ isOpen, setMenuState }) => {
   const toogleMobileMenu = () => {
     setMenuState(false)
-    document.body.style.overflowY = 'hidden';
+    document.body.style.overflow = 'hidden';
   }
   return (
     <StyledWrapper onClick={toogleMobileMenu} isOpen={isOpen}>
