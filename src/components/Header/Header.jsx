@@ -8,6 +8,7 @@ const StyledHero = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 0;
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
    position: relative;

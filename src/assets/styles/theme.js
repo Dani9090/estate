@@ -54,7 +54,8 @@ export const theme = {
     desktop: "@media (min-width: 1024px)",
     bigDesktop: "@media (min-width: 1280px)",
     large: "@media (min-width: 1545px)",
-    own: "@media (min-width: 1655px)"
+    own: "@media (min-width: 1655px)",
+    Biglarge: "@media (min-width: 1921px)",
   },
   mq: {
     tablet: "@media (min-width: 768px)",

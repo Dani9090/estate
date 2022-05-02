@@ -22,8 +22,10 @@ import {
 } from "./Form.styles"
 
 
-export default function Form() {
-
+export default function Form({setModalOpen, ...props}) {
+    const toogleModalOpen = () => {
+        setModalOpen(true)
+    }
 
     const {
         register,
@@ -58,7 +60,7 @@ export default function Form() {
         if (res.status >= 400 && res.status < 600) {
             console.log(text.message);
         } else {
-           alert('Success! Mail send');
+            setModalOpen(true)
         }
     }
     const options = [
@@ -69,7 +71,8 @@ export default function Form() {
     ]
 
     return (
-        <StyledWrapper id="kontakt" onSubmit={handleSubmit(onSubmit)}>
+         <StyledWrapper id="kontakt" onSubmit={handleSubmit(onSubmit)}>
+
             <StyledTitleSection>
                 <StyledTitle>
 
@@ -309,5 +312,6 @@ export default function Form() {
                 </StyledButton>
             </StyledForm>
         </StyledWrapper>
+
     )
 }

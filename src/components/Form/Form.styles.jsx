@@ -11,6 +11,7 @@ export const StyledWrapper = styled.form`
   align-items: center;
   flex-direction: column;
   position: relative;
+  z-index: 0;
 
   &::after {
     position: absolute;
@@ -34,6 +35,7 @@ export const StyledWrapper = styled.form`
       background-color: ${({ theme }) => theme.orange};
       left: 30px;
       bottom: 30px;
+      
     }
     
   }
@@ -76,6 +78,7 @@ export const StyledInner = styled.div`
     border-radius: 5px;
     z-index: 1;
     background-color: ${({ theme }) => theme.brown};
+    font-family: ${({ theme }) => theme.font.family.montserrat};
     color: ${({ theme }) => theme.white};
     padding-left: 5px;
     padding-top: 15px;

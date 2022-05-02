@@ -56,11 +56,23 @@ const StyledInner = styled.div`
     max-width: 1840px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     justify-content: center;
     padding-bottom: 20px;
     
   };
+  ${({ theme }) => theme.media.Biglarge} {
+    width: 80%;
+    max-width: 1840px;
+    border: 1px red solid;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    padding-bottom: 20px;
+
+  }
+ 
 `
 
 const StyledTitle = styled.h1`

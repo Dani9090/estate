@@ -10,6 +10,7 @@ const StyledWrapper = styled.div`
   background-color: ${({ theme }) => theme.black};
   position: relative;
   line-height: 1.5;
+  z-index: 0;
 `
 const StyledInner = styled.div`
   width: 100vw;
@@ -280,7 +281,7 @@ const StyledUL = styled.div`
     font-family: ${({ theme }) => theme.font.family.montserrat};
     font-weight: 500;
     text-align: center;
-    border: 1px solid red;
+  
     li {
       width: auto;
       list-style-position: inside;

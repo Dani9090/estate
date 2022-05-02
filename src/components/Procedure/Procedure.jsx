@@ -8,6 +8,7 @@ const StyledWrapper = styled.div`
     border: 1px ${({ theme }) => theme.orange} solid;
     background-color: ${({ theme }) => theme.orange};
     position: relative;
+  z-index: 0;
 
     p {
       height: auto;
