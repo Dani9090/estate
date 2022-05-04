@@ -64,7 +64,6 @@ const StyledInner = styled.div`
   ${({ theme }) => theme.media.Biglarge} {
     width: 80%;
     max-width: 1840px;
-    border: 1px red solid;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

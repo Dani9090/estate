@@ -17,7 +17,7 @@ const Button = styled.button`
   right: 0;
   background: none;
   padding-left: 6px;
-  margin: 5px 15px 0 0;
+  
   z-index: 999999;
   border: 2px solid black;
   border-radius: 10%;
