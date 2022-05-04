@@ -22,24 +22,16 @@ import {
 } from "./Form.styles"
 
 
-export default function Form({setModalOpen, ...props}) {
-    const toogleModalOpen = () => {
+export default function Form({setModalOpen}) {
+  /*  const toogleModalOpen = () => {
         setModalOpen(true)
-    }
+    }*/
 
     const {
         register,
         handleSubmit,
         formState: {errors},
     } = useForm()
-
-    /*  const onSubmit = data => {
-        console.log(data)
-        let test = []
-        test.push(data)
-        console.log(test);
-      }*/
-
 
     async function onSubmit(data) {
         const body = {
@@ -58,7 +50,7 @@ export default function Form({setModalOpen, ...props}) {
         );
         const text = JSON.parse(await res.text());
         if (res.status >= 400 && res.status < 600) {
-            console.log(text.message);
+            alert(text.message);
         } else {
             setModalOpen(true)
         }

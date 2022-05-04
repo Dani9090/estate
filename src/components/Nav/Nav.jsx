@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {useLocation} from "@reach/router"
+import {useLocation} from "react-router-dom"
 import styled, {css} from "styled-components"
 import {Link} from "gatsby"
 import Hamburger from "src/components/Hamburger/Hamburger";

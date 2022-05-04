@@ -51,6 +51,7 @@ export const StyledHome=styled.div`
   display: grid;
   place-items: center;
  `
+// eslint-disable-next-line no-unused-vars
 export const Links = styled(({isBig, ...props}) => <Link {...props} />)`
   font-size: ${({ theme, isBig }) => isBig ?  theme.font.size.l : theme.font.size.s};
   text-decoration: none;

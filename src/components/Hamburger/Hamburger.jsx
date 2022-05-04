@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 
 
@@ -69,7 +71,7 @@ transition: background-color .15s ease-in-out;
 `;
 
 
-const Hamburger = ({isOpen, ...props}) => {
+const Hamburger = ({isOpen,setMenuState, isMenuOpen, ...props}) => {
     const toogleMobileMenu = () => {
         setMenuState(!isMenuOpen)
     }
@@ -79,4 +81,12 @@ const Hamburger = ({isOpen, ...props}) => {
         <InnerHambuerger isOpen={isOpen} />
     </StyledHamburger>
 )};
+
+
+Hamburger.propTypes = {
+    isOpen: PropTypes.bool,
+    isMenuOpen: PropTypes.bool,
+    setMenuState:PropTypes.func,
+}
+
 export default Hamburger;
