@@ -82,7 +82,7 @@ const StyledInner = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
-  padding: 0px 0 70px 0;
+  padding-bottom:70px;
 
   div {
     display: grid;
@@ -106,6 +106,9 @@ const StyledInner = styled.div`
       place-items: center;
       flex-direction: column;
        color: ${({ theme }) => theme.white};
+    }
+    p{
+      padding-top: 20px;
     }
   }
   ${({theme}) => theme.media.bigDesktop} {
@@ -136,16 +139,16 @@ const StyledImage = styled.div`
 
   ${({theme}) => theme.media.desktop} {
     position: relative;
-    width: 230px;
-    height: 230px;
+    width: 220px;
+    height: 220px;
     border-radius: 100%;
     background-color: white;
   }
   
   ${({theme}) => theme.media.large} {
     position: relative;
-    width: 240px;
-    height: 240px;
+    width: 230px;
+    height: 230px;
     border-radius: 100%;
     background-color: white;
    
@@ -206,10 +209,8 @@ const Number = styled.div`
   font-size: 20px;
   ${({ theme }) => theme.media.desktop} {
     position: absolute;
-    bottom: 0;
-    left: 40px;
-    width: 45px;
-    height: 45px;
+    bottom: -10px;
+    left: 30px;
     background-color: black;
     border-radius: 100%;
     font-family: ${({ theme }) => theme.font.family.montserrat};

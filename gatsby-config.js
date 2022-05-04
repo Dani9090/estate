@@ -23,9 +23,7 @@ module.exports = {
     `gatsby-plugin-eslint`,
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-portal",
-
-    {
+     {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/assets/icons/logo.png",

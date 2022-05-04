@@ -14,7 +14,19 @@ const StyledWrapper = styled.div`
   position: relative;  
 
   ${({ theme }) => theme.media.desktop} {
-border: 1px solid red;
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 350px);
+    background-color: ${({ theme }) => theme.black};
+    border: 1px solid ${({ theme }) => theme.black};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+  }
+  ${({ theme }) => theme.media.Biglarge} {
     width: 100%;
     height: calc(100vh - 385px);
     background-color: ${({ theme }) => theme.black};
@@ -24,7 +36,9 @@ border: 1px solid red;
     align-items: center;
     flex-direction: column;
     position: relative;
-  }  
+
+  }
+  
 `
 
 const StyledTitleSection = styled.div` 
@@ -39,12 +53,14 @@ const StyledTitleSection = styled.div`
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
     height: auto;
-    min-height: 250px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     position: relative;
     flex-direction: column;
     color: ${({ theme }) => theme.white};
+    margin-bottom: 40px;
+   
   }
 `
 const StyledTitle = styled.div`
@@ -69,6 +85,7 @@ const StyledTitle = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+
   }
 `
 const Back = styled.div`
@@ -81,7 +98,14 @@ const Back = styled.div`
   border-radius: 2px;
   z-index: 1;
   ${({ theme }) => theme.media.desktop} {
-    z-index: 999;
+    width: 200px;
+    height: 70px;
+    background-color: ${({ theme }) => theme.orange};
+    position: absolute;
+    left: -115px;
+    top: -20px;
+    border-radius: 2px;
+    z-index: 1;
 
   }
 `
@@ -96,6 +120,7 @@ const H1 = styled.p`
   font-family: ${({ theme }) => theme.font.family.gilda};
   ${({ theme }) => theme.media.desktop} {
     z-index: 999;
+    font-size: ${({ theme }) => theme.font.size.xl};
     
   }
   
@@ -103,7 +128,7 @@ const H1 = styled.p`
 
 const StyledDescriptionTitle = styled.p`
   width: 80%;
-  height: 100px;
+  height: auto;
   text-align: center;
   word-break: normal;
   line-height: 1.3;
@@ -150,10 +175,10 @@ const StyledInner = styled.div`
       content: "";
       width: 100px;
       height: 100px;
-      clip-path: polygon(0 0, 100% 0, 100% 13%, 13% 13%, 13% 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 12%, 12% 12%, 12% 100%, 0% 100%);
       background-color: ${({ theme }) => theme.orange};
       left: -60px;
-      top: -60px;
+      top: -50px;
     }
   }
 `
