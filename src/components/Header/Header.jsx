@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 
 const StyledHero = styled.div`
   width: 100vw;

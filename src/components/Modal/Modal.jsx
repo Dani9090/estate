@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import styled from "styled-components";
-
+import PropTypes from "prop-types";
 
 const StyledModal = styled.div`
   width: auto;
@@ -142,5 +142,13 @@ const ModalTest = ({ isModalOpen, setModalOpen }) => {
     </StyledModal>
   );
 };
+ModalTest.propTypes = {
+  isModalOpen: PropTypes.bool,
+  setModalOpen:PropTypes.func,
+}
 
+ModalTest.defaultProps = {
+  isModalOpen: false,
+
+}
 export default ModalTest;

@@ -24,8 +24,10 @@ const transporter = nodemailer.createTransport({
     port: 587,
     tls: {rejectUnauthorized: false},
     auth: {
-        user: 'test@z-lokatorem.pl',
-        pass: 'Test123',
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
+        user: 'kontakt@z-lokatorem.pl',
+        pass: 'z4TS8zRvkDZm',
     },
 });
 
@@ -38,7 +40,7 @@ exports.handler = async (event, context) => {
 
     // Test send an email
     const info = await transporter.sendMail({
-        from: "Z-lokatorem <test@z-lokatorem.pl>",
+        from: "Z-lokatorem <kontakt@z-lokatorem.pl>",
         to: `<${body.data.Email}>` ,
         subject: `Prośba o kontakt od ${body.data.FirstName} | ${body.data.Email}`,
         html: generateOrderEmail({data : body.data}),

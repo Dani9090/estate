@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql} from "gatsby"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import PropTypes from "prop-types";
 
 import {
   StyledWrapper,
@@ -18,7 +19,9 @@ import {
   Div
 } from "./CreatePages.styles";
 
+// eslint-disable-next-line react/prop-types
 export default function BlogPost({ data }) {
+  // eslint-disable-next-line react/prop-types
   const estate = data.allDatoCmsEstate.nodes
   return (
     <StyledWrapper>
@@ -78,6 +81,11 @@ export default function BlogPost({ data }) {
       ))}
     </StyledWrapper>
   )
+}
+
+BlogPost.propTypes = {
+  estate: PropTypes.arrayOf(PropTypes.string),
+  galeryestate: PropTypes.arrayOf(PropTypes.string)
 }
 
 export const query = graphql`

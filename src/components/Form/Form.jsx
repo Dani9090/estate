@@ -20,12 +20,12 @@ import {
     H1
 
 } from "./Form.styles"
+import PropTypes from "prop-types";
+
 
 
 export default function Form({setModalOpen}) {
-  /*  const toogleModalOpen = () => {
-        setModalOpen(true)
-    }*/
+
 
     const {
         register,
@@ -307,3 +307,7 @@ export default function Form({setModalOpen}) {
 
     )
 }
+Form.propTypes = {
+    setModalOpen:PropTypes.func,
+}
+
