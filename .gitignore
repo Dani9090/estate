@@ -69,3 +69,10 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Local Netlify folder
+.netlify
+
+# @netlify/plugin-gatsby ignores start
+functions/gatsby
+# @netlify/plugin-gatsby ignores end

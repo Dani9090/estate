@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+
 
 const StyledHero = styled.div`
   width: 100vw;
@@ -31,7 +33,7 @@ const StyleIMG = styled.div`
     position: relative;
   }
 `
-const IMG = styled.img`
+const IMG = styled(GatsbyImage)`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -84,12 +86,11 @@ const Header = () => {
             description
             header {
             url
+            customData
                 gatsbyImageData(
-                    width: 1910
                     placeholder: BLURRED
                     forceBlurhash: false
-                    layout: FIXED
-                    
+                    layout: FULL_WIDTH
                 )
                 filename
             }
@@ -100,7 +101,7 @@ const Header = () => {
   return (
     <StyledHero>
         <StyleIMG>
-        <IMG src={data.datoCmsHeader.header.url} alt={data.datoCmsHeader.header.filename} />
+          <IMG image={data.datoCmsHeader.header.gatsbyImageData} alt={data.datoCmsHeader.header.filename} />
         <StyledP>{data.datoCmsHeader.description}</StyledP>
 
       </StyleIMG>
