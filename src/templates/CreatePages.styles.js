@@ -185,11 +185,11 @@ export const H2=styled.div`
 `
 
 export const StyledDetails = styled.div`
-  width: 90%;
+  width: 95%;
   grid-area: three;
-  padding: 5px 30px;
+  padding: 5px 20px;
   margin-bottom: 30px;
-  
+  border-top: 1px solid ${({ theme }) => theme.whiteMax};
 
   h4 {
     padding: 20px 0 10px 0;
@@ -200,18 +200,20 @@ export const StyledDetails = styled.div`
   p {
     padding: 0;
     margin: 0;
-    font-weight: 500;
-
+    font-weight: 300;
+    font-size: ${({ theme }) => theme.font.size.xs};
+ 
     &:last-child {
-      font-weight: 300;
-      padding-left: 15px;
+      font-weight: 500;
+      padding-left: 12px;
     }
   }
 
   div {
     height: auto;
-    padding: 15px 0;
+    padding: 10px 0;
     display: flex;
+  
   }
   ${({ theme }) => theme.media.desktop} {
     width: 90%;
@@ -284,6 +286,7 @@ export const StyledDescriptionContact = styled.div`
   width: auto;
   height: auto;
   padding: 40px 0;
+  
   h3 {
     font-weight: 500;
     margin: 5px 0;

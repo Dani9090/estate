@@ -80,9 +80,24 @@ export const StyledInner = styled.div`
     background-color: ${({ theme }) => theme.brown};
     font-family: ${({ theme }) => theme.font.family.montserrat};
     color: ${({ theme }) => theme.white};
-    padding-left: 5px;
-    padding-top: 15px;
-  }
+    padding-left: 10px;
+    padding-top: 30px;
+    ${({ theme }) => theme.media.desktop} {
+      width: 80vw;
+      max-width: 450px;
+      height: 120px;
+      border: 1px solid ${({ theme }) => theme.orange};
+      border-radius: 5px;
+      z-index: 1;
+      background-color: ${({ theme }) => theme.brown};
+      font-family: ${({ theme }) => theme.font.family.montserrat};
+      color: ${({ theme }) => theme.white};
+      padding-left: 5px;
+      padding-top: 15px;
+    
+    }
+        
+    }
 ;
 
   input {

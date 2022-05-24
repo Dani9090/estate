@@ -72,16 +72,7 @@ const Footer = () => {
             </li>
           </StyledNavFooter>
         </TopSide>
-        <StyledP>
-          Wyrażam zgodę na przetwarzanie moich danych osobowych przez xxx w
-          zakresie niezbędnym do oferowania produktów i usług, w tym podmiotów
-          współpracujących z xxx Przyjmuję do wiadomości, że moje dane osobowe
-          zostaną wprowadzone do bazy danych i będą przetwarzane przez xxx. dla
-          celów statystycznych. Oświadczam również, iż moja zgoda jest
-          dobrowolna a także, że zostałem poinformowany, iż mam prawo wglądu do
-          swoich danych, ich poprawienia lub usunięcia. Administratorami danych
-          osobowych jest xxx z siedzibą w xxx (00-000) przy ul. xxx
-        </StyledP>
+
       </StyledWrapper>
     </StyledFooter>
   );

@@ -24,7 +24,7 @@ import PropTypes from "prop-types";
 
 
 
-export default function Form({setModalOpen}) {
+export default function Form({toogleModalOpen}) {
 
 
     const {
@@ -52,7 +52,7 @@ export default function Form({setModalOpen}) {
         if (res.status >= 400 && res.status < 600) {
             alert(text.message);
         } else {
-            setModalOpen(true)
+            toogleModalOpen();
         }
     }
     const options = [
@@ -64,7 +64,7 @@ export default function Form({setModalOpen}) {
 
     return (
          <StyledWrapper id="kontakt" onSubmit={handleSubmit(onSubmit)}>
-
+<button onClick={()=>toogleModalOpen()}>aaa</button>
             <StyledTitleSection>
                 <StyledTitle>
 
