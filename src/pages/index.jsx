@@ -7,15 +7,15 @@ import SupportedCity from "../components/SupportedCity/SuppoetedCity"
 import Modal from "../components/Modal/Modal"
 
 const Homepage = () => {
-  const [isModalOpen, setModalOpen] = useState(false)
+  const [isModalOpen, setModalOpen] = useState()
 
   const toogleModalOpen = () => {
     setModalOpen(!isModalOpen)
   }
+  console.log(isModalOpen);
   return (
     <main>
       <Header />
-
       <About />
       <Procedure />
       <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} onClick={toogleModalOpen}/>

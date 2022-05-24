@@ -4,7 +4,6 @@ import styled from "styled-components";
 import {
   StyledFooter,
   StyledWrapper,
-  StyledP,
   Links,
   Phone
 } from "./Footer.styles";
