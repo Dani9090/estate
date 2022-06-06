@@ -1,7 +1,21 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { StyledWrapper, StyledTitleSection, StyledDescriptionTitle, StyledInner, StyledDesc,StyledImageInner,StyledTitle,Back,H1,InnerEmpty,IMG} from "./Estate.styles"
+import { StyledWrapper, StyledTitleSection, StyledDescriptionTitle, StyledInner, StyledDesc,StyledImageInner,StyledTitle,Back,H1,InnerEmpty, StyledImg} from "./Estate.styles"
+import styled from "styled-components";
+import { GatsbyImage } from "gatsby-plugin-image";
 
+
+export const IMG = styled(GatsbyImage)`
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  ${({ theme }) => theme.media.desktop} {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    
+  }
+`
 
 const Estate = () => {
   const data = useStaticQuery(graphql`
@@ -13,7 +27,10 @@ const Estate = () => {
           slug
           descriptionestate
           galeryestate {
-            url
+          
+              gatsbyImageData(placeholder: BLURRED, forceBlurhash: false, layout: FULL_WIDTH)
+                url
+                filename
           }
         }
       }
@@ -38,7 +55,11 @@ const Estate = () => {
           {data.allDatoCmsEstate.nodes.map(estate => (
             <Link to={estate.slug} key={estate.id}>
               <StyledImageInner key={estate.id}>
-                <IMG image={estate.galeryestate[0].url} alt="foto" />
+               {/* <IMG image={estate.galeryestate[0].url} alt="foto" />*/}
+                <StyledImg>
+                  {console.log(estate.galeryestate)}
+                <IMG image={estate.galeryestate[0].gatsbyImageData} alt={estate.galeryestate.filename} />
+                </StyledImg>
                 <StyledDesc>
                   <h4>{estate.titleestate}</h4>
                   <p>{estate.descriptionestate}</p>

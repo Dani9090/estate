@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export const StyledWrapper = styled.div`
   width: 100vw;
@@ -14,7 +15,7 @@ export const StyledWrapper = styled.div`
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
     height: auto;
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 275px);
     background-color: ${({ theme }) => theme.black};
     border: 1px solid ${({ theme }) => theme.black};
     display: flex;
@@ -205,13 +206,27 @@ export const StyledImageInner = styled.div`
     color: ${({ theme }) => theme.whiteMax};
   }
 `
-export const IMG = styled.div`
+export const StyledImg = styled.div`
   width: 280px;
   height: 380px;
-  background-image: url("${({ image }) => image}");
+/*  background-image: url("${({ image }) => image}");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
 `
+
+export const IMG = styled(GatsbyImage)`
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+
+  ${({ theme }) => theme.media.desktop} {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    
+  }
+`
+
 export const StyledDesc = styled.div`
   width: 80%;
 `
@@ -229,3 +244,10 @@ export const InnerEmpty = styled.div`
     font-weight: 300;
   }
 `
+/*
+export const IMG = styled.div`
+  width: 280px;
+  height: 380px;
+  background-image: url("${({ image }) => image}");
+  background-repeat: no-repeat;
+  background-size: cover;`*/
