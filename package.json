@@ -47,7 +47,6 @@
     "react-router-dom": "^6.3.0",
     "react-slick": "^0.29.0",
     "react-slugify": "^2.0.3",
-    "react-step-progress": "^1.0.3",
     "simple-react-lightbox": "^3.6.9-0",
     "styled-components": "^5.2.3"
   },
