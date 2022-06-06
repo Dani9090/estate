@@ -7,7 +7,8 @@ import SupportedCity from "../components/SupportedCity/SuppoetedCity"
 import Modal from "../components/Modal/Modal"
 
 const Homepage = () => {
-  const [isModalOpen, setModalOpen] = useState()
+  const [isModalOpen, setModalOpen] = useState(false)
+  const [contextModal, setcontextModal] = useState('')
 
   const toogleModalOpen = () => {
     setModalOpen(!isModalOpen)
@@ -18,8 +19,8 @@ const Homepage = () => {
       <Header />
       <About />
       <Procedure />
-      <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} onClick={toogleModalOpen}/>
-      <Form onClick={toogleModalOpen} setModalOpen={setModalOpen} isModalOpen={isModalOpen} />
+      <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} contextModal={contextModal}/>
+      <Form onClick={toogleModalOpen} setcontextModal={setcontextModal} setModalOpen={setModalOpen} isModalOpen={isModalOpen} />
 
       <SupportedCity />
     </main>

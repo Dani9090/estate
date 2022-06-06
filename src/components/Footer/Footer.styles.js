@@ -12,7 +12,7 @@ export const StyledFooter = styled.div`
 
   ${({ theme }) => theme.media.desktop} {
     width: 100%;
-    height: 285px;
+    height: auto;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -32,7 +32,8 @@ export const StyledWrapper = styled.footer`
 
   ${({ theme }) => theme.media.desktop} {
     width: 90%;
-    height: 285px;
+    height: auto;
+    padding-top:30px;
   }
 `
 

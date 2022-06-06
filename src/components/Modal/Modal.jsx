@@ -117,7 +117,7 @@ const customStyles = {
   }
 };
 
-const ModalTest = ({ isModalOpen, setModalOpen }) => {
+const ModalTest = ({ contextModal, isModalOpen, setModalOpen }) => {
 
   const toogleModalClose = () => {
     setModalOpen(false);
@@ -136,7 +136,7 @@ const ModalTest = ({ isModalOpen, setModalOpen }) => {
           <Button onClick={toogleModalClose}>
             <ButtonInner />
           </Button>
-          <p>Dziekujemy za wysłanie zapytania skontaktujemy się</p>
+          <p>{contextModal}</p>
         </StyledInner>
       </Modal>
     </StyledModal>

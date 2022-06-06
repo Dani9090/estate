@@ -60,7 +60,6 @@
     "esm": "^3.2.25",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-eslint": "^4.0.2",
-    "gatsby-plugin-eslint-v2": "^2.0.0-beta.0",
     "gatsby-plugin-root-import": "^2.0.8",
     "prettier": "2.2.1",
     "sass": "^1.51.0"
